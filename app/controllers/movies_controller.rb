@@ -8,7 +8,8 @@ class MoviesController < ApplicationController
   end
 
 private
-  def movie_params
+
+  def strong_params
     params.require(:movie).permit(:name, :description)
   end
 end

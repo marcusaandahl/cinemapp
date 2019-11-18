@@ -3,4 +3,6 @@ class Room < ApplicationRecord
   # dependent?
   has_many :seats, dependent: :destroy
   has_many :sessions
+
+  validates :name, presence: true
 end
