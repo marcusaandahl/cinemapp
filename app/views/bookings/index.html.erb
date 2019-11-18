@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Movies INDEX</h2>
+<h2>Bookings INDEX</h2>
 
   <div class="row">
     <div class="card-columns">
-      <% @movies.each do |movie| %>
+      <% @bookings.each do |booking| %>
         <div class="col-4">
           <div class="card" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title"><%= link_to movie.name, movie_path(movie) %></h5>
+                <h5 class="card-title">This Is a booking for seat <%= booking.seat_id %>.</h5>
+
             </div>
           </div>
         </div>

@@ -1,8 +1,19 @@
 class SeatsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
 
- private
+  def index
+    @seats = Seat.all
+  end
 
-def strong_params
-  params.require(:seat).permit(:row, :column)
-end
+  def update
+    @seat.update(strong_params)
+
+    redirect_to root_path
+  end
+
+  private
+
+  def strong_params
+    params.require(:seat).permit(:row, :column)
+  end
 end

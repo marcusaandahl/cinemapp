@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-    <h1><%= @movie.name %></h1>
-    <p><%= @movie.description %></p>
+<h2><%= @movie.name %></h2>
+<p><%= @movie.description %></p>
 
-        <img src="<%= cl_image_path @movie.image,  height: 300, width: 400, crop: :fill %>"></div>
-
+<%= link_to "Go Back", movies_path %>
