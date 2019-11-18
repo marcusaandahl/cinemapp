@@ -8,6 +8,6 @@ class RoomsController < ApplicationController
   private
 
   def strong_param
-    params.require(:mom).permit(:name, :last_name, :location, :price, :owner, :bio, :photo)
+    params.require(:room).permit(:name)
   end
 end
