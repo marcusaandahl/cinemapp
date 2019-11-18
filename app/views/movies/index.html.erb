@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+
+  <div class="row">
+    <div class="card-columns">
+      <% @movies.each do |movie| %>
+        <div class="col-4">
+          <div class="card" style="width: 18rem;">
+            <%= cl_image_tag movie.image, class: "card-img-top" %>
+              <div class="card-body">
+               <h5 class="card-title"><%= link_to movie.name, movie_path(movie) %></h5>
+              </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
