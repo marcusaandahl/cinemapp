@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking
-  
+
   def index
     @bookings = Booking.all
   end
@@ -37,6 +37,7 @@ class BookingsController < ApplicationController
   end
 
   private
+
   def set_booking
     @booking = Booking.find(params[:id])
   end

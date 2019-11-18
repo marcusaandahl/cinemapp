@@ -8,7 +8,8 @@ class CinemasController < ApplicationController
   end
 
 private
-  def cinema_params
+
+  def strong_params
     params.require(:cinema).permit(:name, :address)
   end
 end
