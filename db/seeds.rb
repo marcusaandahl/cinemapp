@@ -19,18 +19,16 @@ Booking.destroy_all
 puts 'Creating users'
 
 henderson = User.new(
- name: "Henderson",
- last_name: "Pinto",
- location: Faker::Address.full_address,
+ name: "Henderson Pinto",
+ # location: Faker::Address.full_address,
  email: "henderson@mammamia.com",
  password: "1234567"
  )
 henderson.save!
 
 rasmus = User.new(
- name: "Rasmus",
- last_name: "Melberg",
- location: Faker::Address.full_address,
+ name: "Rasmus Melberg",
+ # location: Faker::Address.full_address,
  email: "rasmus@cinemapp.com",
  password: "1234567"
  )
@@ -38,18 +36,16 @@ rasmus.save!
 
 
 marcus = User.new(
- name: "Marcus",
- last_name: "Aandahl",
- location: Faker::Address.full_address,
+ name: "Marcus Aandahl",
+ # location: Faker::Address.full_address,
  email: "marcus@cinemapp.com",
  password: "1234567"
  )
 marcus.save!
 
 juliana = User.new(
- name: "Juliana",
- last_name: "Geller",
- location: Faker::Address.full_address,
+ name: "Juliana Geller",
+ # location: Faker::Address.full_address,
  email: "juliana@cinemapp.com",
  password: "1234567"
  )
@@ -133,9 +129,9 @@ puts 'Creating rooms'
 rooms = []
 cinemas = [empire, park, falconer, palads]
 cinemas.each { |cinema|
-i = 0
+i = 1
 while i <= 4
-  rooms << Room.create(
+  Room.create(
  name: "Room #{i}",
  cinema: cinema,
 )
@@ -149,7 +145,7 @@ puts 'saving rooms...'
 
 
 ################### SEATS
-
+rooms = Room.all
 puts 'Creating seats'
 rooms.each { |room|
   rows = (1..15)
@@ -159,7 +155,7 @@ rooms.each { |room|
       Seat.create(
         row: row,
         column: column,
-        room: room,
+        room_id: room,
       )
     }
   }
