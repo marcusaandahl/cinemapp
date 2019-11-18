@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new(strong_params)
     if @booking.save
       redirect_to edit_booking_path(@booking)
     else
@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking.update(booking_params)
+    @booking.update(strong_params)
 
     redirect_to booking_path(@booking)
   end
@@ -39,7 +39,7 @@ class BookingsController < ApplicationController
     @booking = Cocktail.find(params[:id])
   end
 
-  def strong_param
+  def strong_params
     params.require(:booking).permit(:discounted_price)
   end
 

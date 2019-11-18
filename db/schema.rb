@@ -10,17 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_11_18_141814) do
+=======
+ActiveRecord::Schema.define(version: 2019_11_18_135629) do
+>>>>>>> 8c2082c6cbd6898aa219158cc647814a273b3222
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "bookings", force: :cascade do |t|
     t.integer "discounted_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> 8c2082c6cbd6898aa219158cc647814a273b3222
   create_table "cinemas", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -28,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_141814) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "movies", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -48,6 +56,8 @@ ActiveRecord::Schema.define(version: 2019_11_18_141814) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> 8c2082c6cbd6898aa219158cc647814a273b3222
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
