@@ -1,3 +1,5 @@
 class Session < ApplicationRecord
-  validates :showtime, uniqueness: true, presence: true
+  belongs_to :room
+  belongs_to :movie
+  has_many :bookings, dependent: :destroy
 end
