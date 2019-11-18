@@ -1,5 +1,6 @@
 class CinemasController < ApplicationController
-    def index
+
+  def index
     @cinemas = Cinema.all
   end
 
@@ -8,6 +9,7 @@ class CinemasController < ApplicationController
   end
 
 private
+
   def cinema_params
     params.require(:cinema).permit(:name, :address)
   end
