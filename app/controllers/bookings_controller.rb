@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :set_booking
+  
   def index
     @bookings = Booking.all
   end
@@ -13,6 +15,12 @@ class BookingsController < ApplicationController
   def edit
   end
 
+  def update
+    @booking.update(strong_params)
+
+    redirect_to booking_path(@booking)
+  end
+
   def create
     @booking = Booking.new(strong_params)
     if @booking.save
@@ -20,12 +28,6 @@ class BookingsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def update
-    @booking.update(strong_params)
-
-    redirect_to booking_path(@booking)
   end
 
   def destroy
@@ -36,7 +38,7 @@ class BookingsController < ApplicationController
 
   private
   def set_booking
-    @booking = Cocktail.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 
   def strong_params
