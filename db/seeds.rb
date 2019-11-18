@@ -57,7 +57,24 @@ puts 'saving users'
 
 ################### CINEMAS
 
+# CINEMAS= [
+#   { name: "Empire Cinema", address: "Guldbergsgade 29F, 2200 København" },
+#   { name: "Empire Cinema", address: "Guldbergsgade 29F, 2200 København" },
+#   { name: "Empire Cinema", address: "Guldbergsgade 29F, 2200 København" },
+#   { name: "Empire Cinema", address: "Guldbergsgade 29F, 2200 København" }
+# ]
+
+# CINEMAS.each do |cinema_params|
+#   cinema = Cinema.new(cinema_params)
+#   cinema.save!
+
+#   # Create rooms for the cinema
+
+#     # Create seats for the room
+# end
+
 puts 'Creating cinemas'
+
 empire = Cinema.new(
  name: "Empire Cinema",
  address: "Guldbergsgade 29F, 2200 København"
@@ -127,39 +144,24 @@ puts 'saving movies'
 ################### ROOMS
 
 puts 'Creating rooms'
-rooms = []
 cinemas = [empire, park, falconer, palads]
-cinemas.each { |cinema|
-i = 1
-while i <= 4
-  Room.create(
- name: "Room #{i}",
- cinema: cinema,
-)
-i+=1
+cinemas.each do |cinema|
+  5.times do |i|
+    room = Room.create(
+     name: "Room #{i}",
+     cinema: cinema,
+    )
+    5.times do |row|
+      5.times do |column|
+        seat = Seat.create(
+          row: row,
+          column: column,
+          room: room,
+          )
+        # puts "Seat is valid? #{seat.valid? ? 'Yes' : 'No' }"
+        # p seat.errors
+        # puts "Creating seat for #{room.name}"
+      end
+    end
+  end
 end
-}
-
-puts 'saving rooms...'
-
-
-
-
-################### SEATS
-rooms = Room.all
-puts 'Creating seats'
-rooms.each { |room|
-  rows = (1..15)
-  rows.each {|row|
-    columns = (1..15)
-    columns.each {|column|
-      Seat.create(
-        row: row,
-        column: column,
-        room_id: room,
-      )
-    }
-  }
-}
-puts "saving seats for room #{self} "
-

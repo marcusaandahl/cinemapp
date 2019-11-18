@@ -3,6 +3,7 @@ class Seat < ApplicationRecord
   # dependent?
   has_many :bookings
 
-  validates :row, uniqueness: true, presence: true
-  validates :column, uniqueness: true, presence: true
+  validates :row, presence: true
+  validates :column, presence: true
+  # scope row + column + roomid
 end
