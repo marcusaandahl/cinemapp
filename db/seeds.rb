@@ -19,18 +19,16 @@ Booking.destroy_all
 puts 'Creating users'
 
 henderson = User.new(
- name: "Henderson",
- last_name: "Pinto",
- location: Faker::Address.full_address,
+ name: "Henderson Pinto",
+ # location: Faker::Address.full_address,
  email: "henderson@mammamia.com",
  password: "1234567"
  )
 henderson.save!
 
 rasmus = User.new(
- name: "Rasmus",
- last_name: "Melberg",
- location: Faker::Address.full_address,
+ name: "Rasmus Melberg",
+ # location: Faker::Address.full_address,
  email: "rasmus@cinemapp.com",
  password: "1234567"
  )
@@ -38,18 +36,16 @@ rasmus.save!
 
 
 marcus = User.new(
- name: "Marcus",
- last_name: "Aandahl",
- location: Faker::Address.full_address,
+ name: "Marcus Aandahl",
+ # location: Faker::Address.full_address,
  email: "marcus@cinemapp.com",
  password: "1234567"
  )
 marcus.save!
 
 juliana = User.new(
- name: "Juliana",
- last_name: "Geller",
- location: Faker::Address.full_address,
+ name: "Juliana Geller",
+ # location: Faker::Address.full_address,
  email: "juliana@cinemapp.com",
  password: "1234567"
  )
@@ -60,7 +56,24 @@ puts 'saving users'
 
 ################### CINEMAS
 
+# CINEMAS= [
+#   { name: "Empire Cinema", address: "Guldbergsgade 29F, 2200 København" },
+#   { name: "Empire Cinema", address: "Guldbergsgade 29F, 2200 København" },
+#   { name: "Empire Cinema", address: "Guldbergsgade 29F, 2200 København" },
+#   { name: "Empire Cinema", address: "Guldbergsgade 29F, 2200 København" }
+# ]
+
+# CINEMAS.each do |cinema_params|
+#   cinema = Cinema.new(cinema_params)
+#   cinema.save!
+
+#   # Create rooms for the cinema
+
+#     # Create seats for the room
+# end
+
 puts 'Creating cinemas'
+
 empire = Cinema.new(
  name: "Empire Cinema",
  address: "Guldbergsgade 29F, 2200 København"
@@ -130,39 +143,37 @@ puts 'saving movies'
 ################### ROOMS
 
 puts 'Creating rooms'
-rooms = []
 cinemas = [empire, park, falconer, palads]
-cinemas.each { |cinema|
-i = 0
-while i <= 4
-  rooms << Room.create(
- name: "Room #{i}",
- cinema: cinema,
-)
-i+=1
+cinemas.each do |cinema|
+  5.times do |i|
+    room = Room.create(
+     name: "Room #{i}",
+     cinema: cinema,
+    )
+    5.times do |row|
+      5.times do |column|
+        seat = Seat.create(
+          row: row,
+          column: column,
+          room: room,
+          )
+        # puts "Seat is valid? #{seat.valid? ? 'Yes' : 'No' }"
+        # p seat.errors
+        # puts "Creating seat for #{room.name}"
+      end
+    end
+  end
 end
-}
-
-puts 'saving rooms...'
 
 
 
 
-################### SEATS
 
-puts 'Creating seats'
-rooms.each { |room|
-  rows = (1..15)
-  rows.each {|row|
-    columns = (1..15)
-    columns.each {|column|
-      Seat.create(
-        row: row,
-        column: column,
-        room: room,
-      )
-    }
-  }
-}
-puts "saving seats for room #{self} "
+
+
+
+
+
+
+
 
