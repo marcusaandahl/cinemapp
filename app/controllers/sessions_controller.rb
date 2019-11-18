@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
   private
 
-  def strong_param
+  def strong_params
     params.require(:session).permit(:showtime)
   end
 end

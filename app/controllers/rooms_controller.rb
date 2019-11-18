@@ -7,7 +7,7 @@ class RoomsController < ApplicationController
 
   private
 
-  def strong_param
+  def strong_params
     params.require(:room).permit(:name)
   end
 end
