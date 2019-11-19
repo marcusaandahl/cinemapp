@@ -22,7 +22,7 @@ puts 'Creating users'
 henderson = User.new(
  name: "Henderson Pinto",
  # location: Faker::Address.full_address,
- email: "henderson@mammamia.com",
+ email: "henderson@cinemapp.com",
  password: "1234567"
  )
 henderson.save!
@@ -143,7 +143,7 @@ puts 'saving movies'
 
 ################### ROOMS
 
-puts 'Creating rooms'
+puts 'Creating rooms and seats'
 cinemas = [empire, park, falconer, palads]
 cinemas.each do |cinema|
   5.times do |i|
@@ -151,16 +151,13 @@ cinemas.each do |cinema|
      name: "Room #{i}",
      cinema: cinema,
     )
-    5.times do |row|
-      5.times do |column|
+    6.times do |row|
+      10.times do |column|
         seat = Seat.create(
           row: row,
           column: column,
           room: room,
           )
-        # puts "Seat is valid? #{seat.valid? ? 'Yes' : 'No' }"
-        # p seat.errors
-        # puts "Creating seat for #{room.name}"
       end
     end
   end
