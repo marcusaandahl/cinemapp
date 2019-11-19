@@ -1,4 +1,6 @@
 <h2><%= @movie.name %></h2>
 <p><%= @movie.description %></p>
+<%= cl_image_tag(@movie.image,
+      width: 400, height: 300, crop: :fill) %>
 
 <%= link_to "Go Back", movies_path %>
