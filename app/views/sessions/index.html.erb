@@ -1,0 +1,11 @@
+
+<% if @movie.sessions.empty? %>
+  <p>Sorry, there are no sessions available for this film</p>
+  <% else @movie.sessions.each do |session| %>
+      <ul>
+        <li>
+          <%= session.room.cinema.name %> - <%= session.showtime %>
+        </li>
+      </ul>
+  <% end %>
+ <% end %>
