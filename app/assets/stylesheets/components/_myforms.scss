@@ -1,0 +1,51 @@
+.notice{
+  // opacity:0.2;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left:60px;
+}
+
+.form-login{
+  background-color: white;
+  padding: 10px 20px;
+  margin-top: 50px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 150px;
+  h2 {
+    font-size:   20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .btn {
+    width:100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+.form-signup{
+  background-color: white;
+  padding: 10px 20px;
+  margin-top: 50px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 150px;
+
+  h2 {
+    font-size:   20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .btn {
+    width:100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
