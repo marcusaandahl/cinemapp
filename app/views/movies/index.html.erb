@@ -2,6 +2,23 @@
 
 <h2>Movies INDEX</h2>
 
+ <div class="search-bar">
+  <div class="search-form row">
+    <div class="form-input">
+  <%= form_tag movies_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a movie"
+  %>
+</div>
+<div class="form-button">
+  <%= submit_tag "Search" %>
+</div>
+<% end %>
+ </div>
+</div>
+
   <div class="row">
     <div class="card-columns">
       <% @movies.each do |movie| %>
