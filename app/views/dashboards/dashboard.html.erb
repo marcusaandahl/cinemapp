@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Bookings</h2>
+
+<h5>Bookings</h5>
+<% if @my_bookings.empty? %>
+  <p>You have no current bookings</p>
+<% else @my_bookings.each do |booking| %>
+  <p>  This Is a booking for seat <%= booking.seat_id %></p>
+  <% end %>
+<% end %>
+
