@@ -7,6 +7,10 @@ class SessionsController < ApplicationController
 
   def show
     @session = Session.find(params[:id])
+    @movie = @session.movie
+    @room = @session.room
+    @cinema = @room.cinema
+    @booking = Booking.new
   end
 
   private

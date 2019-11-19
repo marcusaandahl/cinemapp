@@ -1,0 +1,26 @@
+<h2><%= @movie.name %></h2>
+
+<button type="button" class="btn btn-primary" onclick="createBooking()">Book</button>
+
+<!-- CAN BE DRYER -->
+<script>
+
+  function createBooking() {
+    <% Booking.create(user_id: 1, session_id: 1,discounted_price: 10,integer: 1,seat_id: 1) %>
+  }
+</script>
+
+<div class="row" style="width: 100%">
+  <div class="card-columns" >
+    <% @room.seats.each do |seat| %>
+      <div class="col-1">
+        <div class="card" style="width: 8rem;">
+          <% seatID = seat.id %>
+          <div class="card-body seat-selectable" id="seat-<%= seatID %>">
+            <p class="card-title" >row:<%= seat.row %> column:<%= seat.column %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
