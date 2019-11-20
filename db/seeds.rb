@@ -22,7 +22,7 @@ puts 'Creating users'
 henderson = User.new(
  name: "Henderson Pinto",
  # location: Faker::Address.full_address,
- email: "henderson@mammamia.com",
+ email: "henderson@cinemapp.com",
  password: "1234567"
  )
 henderson.save!
@@ -108,31 +108,36 @@ puts 'saving cinemas'
 puts 'Creating movies'
 terminator = Movie.new(
  name: "Terminator: Dark Fate",
- description: "Sarah Connor and a hybrid cyborg human must protect a young girl from a newly modified liquid Terminator from the future."
+ description: "Sarah Connor and a hybrid cyborg human must protect a young girl from a newly modified liquid Terminator from the future.",
+ image: "p2c4tgmi6ezuls4pab8i"
 )
 terminator.save!
 
 joker = Movie.new(
  name: "Joker",
- description: "In Gotham City, mentally-troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: 'The Joker'."
+ description: "In Gotham City, mentally-troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: 'The Joker'.",
+ image: "rvygxupdxvaz7abeshjm"
 )
 joker.save!
 
 lion_king = Movie.new(
  name: "The Lion King",
- description: "After the murder of his father, a young lion prince flees his kingdom only to learn the true meaning of responsibility and bravery."
+ description: "After the murder of his father, a young lion prince flees his kingdom only to learn the true meaning of responsibility and bravery.",
+ image: "b5gogdptnfaiiwp86ix0"
 )
 lion_king.save!
 
 avengers = Movie.new(
  name: "Avengers: Endgame",
- description: "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
+ description: "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
+ image: "aubq8owobhfenou9yety"
 )
 avengers.save!
 
 toystory = Movie.new(
  name: "Toy Story 4",
- description: "When a new toy called 'Forky' joins Woody and the gang, a road trip alongside old and new friends reveals how big the world can be for a toy."
+ description: "When a new toy called 'Forky' joins Woody and the gang, a road trip alongside old and new friends reveals how big the world can be for a toy.",
+ image: "pev2ejfpwrqrjm2vfiqd"
 )
 toystory.save!
 
@@ -143,7 +148,7 @@ puts 'saving movies'
 
 ################### ROOMS
 
-puts 'Creating rooms'
+puts 'Creating rooms and seats'
 cinemas = [empire, park, falconer, palads]
 cinemas.each do |cinema|
   5.times do |i|
@@ -151,16 +156,13 @@ cinemas.each do |cinema|
      name: "Room #{i}",
      cinema: cinema,
     )
-    5.times do |row|
-      5.times do |column|
+    6.times do |row|
+      10.times do |column|
         seat = Seat.create(
           row: row,
           column: column,
           room: room,
           )
-        # puts "Seat is valid? #{seat.valid? ? 'Yes' : 'No' }"
-        # p seat.errors
-        # puts "Creating seat for #{room.name}"
       end
     end
   end
