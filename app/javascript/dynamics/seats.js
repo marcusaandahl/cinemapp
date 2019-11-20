@@ -12,10 +12,3 @@ $("#book-seats-button").click(function(){
 $(".seat-selectable").click(function(){
   $(this).toggleClass("selected");
 })
-
-$.ajax({
-  url : "/movies/1/sessions/1/boogings",
-  type : "post",
-  data : { datters: "HIIYA" }
-});
-

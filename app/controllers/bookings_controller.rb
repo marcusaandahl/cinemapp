@@ -1,14 +1,18 @@
 class BookingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :create]
+
   def index
     @bookings = Booking.all
   end
 
   def create
-    @booking = Booking.new(strong_params)
-    if @booking.save
-      redirect_to root_path
-    else
-      render :new # to set
+    @session = Session.find(params[:session_id])
+    @movie = @session.movie
+    @room = @session.room
+    @cinema = @room.cinema
+    @booking = Booking.new
+    respond_to do |format|
+      format.js
     end
   end
 
@@ -16,10 +20,6 @@ class BookingsController < ApplicationController
   end
 
   private
-
-  def set_booking
-    @booking = Booking.find(params[:id])
-  end
 
   def strong_params
     params.require(:booking).permit(:discounted_price)

@@ -1,22 +1,16 @@
 <h2><%= @movie.name %></h2>
 
-<button type="button" class="btn btn-primary" onclick="createBooking()">Book</button>
 
-<!-- CAN BE DRYER -->
-<script>
-
-  function createBooking() {
-    <% Booking.create(user_id: 1, session_id: 1,discounted_price: 10,integer: 1,seat_id: 1) %>
-  }
-</script>
+<!-- PRESS BUTTON TO CREATE BOOKING WITH SELECTED SEATS -->
+<%= button_to 'Book', movie_session_bookings_path(@movie, @session), :action => "create", :remote=>true , class:"btn btn-primary"%>
+<%= params.inspect %>
 
 <div class="row" style="width: 100%">
   <div class="card-columns" >
     <% @room.seats.each do |seat| %>
       <div class="col-1">
-        <div class="card" style="width: 8rem;">
-          <% seatID = seat.id %>
-          <div class="card-body seat-selectable" id="seat-<%= seatID %>">
+        <div class="card seat-selectable" id="seat-<%= seat.id %>" style="width: 8rem;">
+          <div class="card-body">
             <p class="card-title" >row:<%= seat.row %> column:<%= seat.column %></p>
           </div>
         </div>

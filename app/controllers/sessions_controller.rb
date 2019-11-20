@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
     @movie = @session.movie
     @room = @session.room
     @cinema = @room.cinema
-    @booking = Booking.new
   end
 
   private
