@@ -33,9 +33,9 @@ weekend = false
 # Total number of seats
 total_seats = 100
 # Random number of seats available, depending on the total number of seats
-# seats_available = (total_seats * (1.fdiv((rand(3..10))))).ceil
+seats_available = (total_seats * (1.fdiv((rand(3..10))))).ceil
 price = 120
 max_discount = 20    # In percentage
 min_empty_seats = 50 # In percentage
 
-p discounted_price(price, max_discount, 1, total_seats, weekend, diff_time, min_empty_seats)
+p discounted_price(price, max_discount, seats_available, total_seats, weekend, diff_time, min_empty_seats)
