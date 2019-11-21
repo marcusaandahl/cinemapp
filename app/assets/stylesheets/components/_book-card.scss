@@ -1,0 +1,48 @@
+.book-card {
+  width:95%;
+  background-color: $lightgrey;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 12px;
+  margin:auto;
+}
+
+.card-info {
+  text-align: center;
+  padding: 20px;
+  margin-left: 20px;
+  p {
+    font-family: Work Sans;
+    font-weight: 600;
+    font-size:12px;
+    margin-bottom:0px;
+  }
+  #price {
+    font-family: Work Sans;
+    font-weight: 600;
+    font-size:16px;
+    color: $red;
+  }
+}
+
+.button-area {
+  width:50%;
+  margin:auto 0;
+  margin-right: 20px;
+
+  .red-button {
+    width:100%;
+    padding: 10px 40px
+  }
+}
+
+
+ // <div class="book-card">
+ //    <div class="card-info">
+ //      <p class="amount_tickets">2 tickets</p>
+ //      <span id="price">240 kr</span>
+ //    </div>
+ //    <div class="button-area">
+ //      <a class="btn red-button" href="#">Book</a>
+ //    </div>
+ //  </div>
