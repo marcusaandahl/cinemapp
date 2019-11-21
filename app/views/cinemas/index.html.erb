@@ -1,1 +1,44 @@
-index.html.erb
+<p id="notice"><%= notice %></p>
+
+<div class="container movie-index">
+  <div class="text-center">
+    <div class="mb-2 search-bar">
+      <div class="search-form">
+        <div class="form-input">
+          <%= form_tag movies_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "search-form-control",
+            placeholder: "Find a cinema"
+          %>
+        </div>
+        <div class="form-button">
+          <%#= submit_tag "Search" %>
+        </div>
+        <% end %>
+     </div>
+    </div>
+  </div>
+  <div class="menu-container">
+    <%= link_to movies_path, class: 'browse-link' do %>
+      <i class="fas fa-film"></i> Browse all movies
+    <% end %>
+    <div class="browse-title"><i class="fa fa-map-marker-alt"></i> Browse all cinemas</div>
+  </div>
+
+  <div class="product-card">
+    <% @cinemas.each do |cinema| %>
+      <div class="row cinema">
+        <div>
+        <%= image_tag(cinema.image,
+          crop: :fill, class: "product-image") %>
+        </div>
+        <div class="product-card-infos">
+          <h2><%= cinema.name %></h2>
+          <h3><%= cinema.address %></h3>
+          <p id="darker">Copenhagen</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
