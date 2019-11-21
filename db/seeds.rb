@@ -22,7 +22,7 @@ puts 'Creating users'
 henderson = User.new(
  name: "Henderson Pinto",
  # location: Faker::Address.full_address,
- email: "henderson@mammamia.com",
+ email: "henderson@cinemapp.com",
  password: "1234567"
  )
 henderson.save!
@@ -75,29 +75,36 @@ puts 'saving users'
 
 puts 'Creating cinemas'
 
+url1 = "http://www.cinema.com.my/images/news/2019/7n_malaysianewcinemas00.jpg"
 empire = Cinema.new(
  name: "Empire Cinema",
  address: "Guldbergsgade 29F, 2200 København"
 )
+ empire.image = url1
 empire.save!
 
+url2 = "https://files.guidedanmark.org/files/382/174564_Park_Bio.jpg?qfix"
 park = Cinema.new(
  name: "Park Bio",
  address: "Østerbrogade 79, 2100 København"
 )
+park.image = url2
 park.save!
 
+url3 = "https://www.airbnb.com/google_place_photo?photoreference=CmRaAAAAe5WJ435w4SOA0omQku7aZZhjp4YXwcrgayN6R_eRmBMo8PfZLZtXVnAxZj4uU7obIvpU9uOUAIQ0ajaGWGVts1NOVhgKqsjw9T0B1pIrUECVVVrj4Dfb1Zhc-JxwUaQmEhCkIyRFHpttf-kMGEjZbBgCGhRNjEvKsmi8Qa-jWsWEbEjq41IbLg&maxwidth=1000&maxheight=1000&place_id=31244"
 falconer = Cinema.new(
  name: "Nordic Film Cinemas Falconer",
  address: "Sylows Alle 15, 2000 Frederiksberg"
 )
+falconer.image = url3
 falconer.save!
 
-
+url4 = "https://www.kino.dk/sites/default/files/styles/k_16-9_big/public/cinema/paladsny.jpg"
 palads = Cinema.new(
  name: "Palads Teatret",
  address: "Axeltorv 9, 1609 København"
 )
+palads.image = url4
 palads.save!
 
 puts 'saving cinemas'
@@ -108,31 +115,36 @@ puts 'saving cinemas'
 puts 'Creating movies'
 terminator = Movie.new(
  name: "Terminator: Dark Fate",
- description: "Sarah Connor and a hybrid cyborg human must protect a young girl from a newly modified liquid Terminator from the future."
+ description: "Sarah Connor and a hybrid cyborg human must protect a young girl from a newly modified liquid Terminator from the future.",
+ image: "p2c4tgmi6ezuls4pab8i"
 )
 terminator.save!
 
 joker = Movie.new(
  name: "Joker",
- description: "In Gotham City, mentally-troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: 'The Joker'."
+ description: "In Gotham City, mentally-troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: 'The Joker'.",
+ image: "rvygxupdxvaz7abeshjm"
 )
 joker.save!
 
 lion_king = Movie.new(
  name: "The Lion King",
- description: "After the murder of his father, a young lion prince flees his kingdom only to learn the true meaning of responsibility and bravery."
+ description: "After the murder of his father, a young lion prince flees his kingdom only to learn the true meaning of responsibility and bravery.",
+ image: "b5gogdptnfaiiwp86ix0"
 )
 lion_king.save!
 
 avengers = Movie.new(
  name: "Avengers: Endgame",
- description: "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe."
+ description: "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
+ image: "aubq8owobhfenou9yety"
 )
 avengers.save!
 
 toystory = Movie.new(
  name: "Toy Story 4",
- description: "When a new toy called 'Forky' joins Woody and the gang, a road trip alongside old and new friends reveals how big the world can be for a toy."
+ description: "When a new toy called 'Forky' joins Woody and the gang, a road trip alongside old and new friends reveals how big the world can be for a toy.",
+ image: "pev2ejfpwrqrjm2vfiqd"
 )
 toystory.save!
 
@@ -143,7 +155,7 @@ puts 'saving movies'
 
 ################### ROOMS
 
-puts 'Creating rooms'
+puts 'Creating rooms and seats'
 cinemas = [empire, park, falconer, palads]
 cinemas.each do |cinema|
   5.times do |i|
@@ -151,16 +163,13 @@ cinemas.each do |cinema|
      name: "Room #{i}",
      cinema: cinema,
     )
-    5.times do |row|
-      5.times do |column|
+    6.times do |row|
+      10.times do |column|
         seat = Seat.create(
           row: row,
           column: column,
           room: room,
           )
-        # puts "Seat is valid? #{seat.valid? ? 'Yes' : 'No' }"
-        # p seat.errors
-        # puts "Creating seat for #{room.name}"
       end
     end
   end

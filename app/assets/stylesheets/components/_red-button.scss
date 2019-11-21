@@ -1,0 +1,14 @@
+.red-button {
+  color: white;
+  font-family: Work Sans;
+  font-weight:600;
+  font-size: 15px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: $red;
+  width:200px;     // This value has to be changed accordingly to the occasion
+  box-shadow: 0 10px 10px -9px $red;
+}
+.red-button:hover {
+  color:white;
+}

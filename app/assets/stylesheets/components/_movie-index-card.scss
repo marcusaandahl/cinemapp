@@ -1,0 +1,34 @@
+
+.movie-card-box {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.movie-card-padding {
+  padding: 3px;
+}
+
+.movie-card img {
+  display: block;
+  border-radius: 12px;
+  margin: 3px;
+  width: 100%;
+  height: 97%;
+  object-fit: cover;
+  box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+}
+.movie-card {
+  width: 47%;
+}
+@include media-breakpoint-up(sm) {
+  .movie-card{
+    width: 31%;
+  }
+}
+@include media-breakpoint-up(xl) {
+  .movie-card{
+    width: 24%;
+  }
+}

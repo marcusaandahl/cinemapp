@@ -1,0 +1,20 @@
+.grey-button {
+  color: black;
+  font-family: Work Sans;
+  font-weight:600;
+  font-size: 15px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: $lightgrey;
+  width:80%;
+  transition: background 0.5s ease;
+  box-shadow: 0 10px 10px -9px black;
+
+}
+
+// .grey-button:hover {
+//   background: $darkgrey;
+//   color: white;
+//   transition: background 0.3s ease;
+
+// }

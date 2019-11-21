@@ -1,0 +1,121 @@
+.fa-arrow-left {
+  margin-top:40px;
+  color: $lightgrey;
+  padding-left:20px;
+}
+
+.login-container{
+width:100%;
+margin:auto;
+}
+
+.notice{
+  // opacity:0.2;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left:60px;
+}
+
+
+.form-login{
+  // background-color: white;
+  padding: 10px 20px;
+  margin-top: 50px;
+  border-radius: 3px;
+  // box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 100px;
+  color:$lightgrey;
+  font-family: Work Sans;
+  // font-weight: 600;
+  h2 {
+    color: $lightergrey;
+    font-size:   36px;
+    font-family: Work Sans;
+    // font-weight: bold;
+    margin-bottom: 30px;
+    // text-align: center;
+  }
+  .btn {
+    width:100%;
+    margin-bottom: 20px;
+  }
+  #user_email {
+    border-radius:12px;
+  }
+
+  #user_password {
+    border-radius:12px;
+  }
+
+  #user_password_confirmation
+  {
+    border-radius:12px;
+  }
+
+  #user_name {
+    border-radius:12px;
+  }
+}
+
+
+.form-signup{
+  background-color: white;
+  padding: 10px 20px;
+  margin-top: 50px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 100px;
+
+  h2 {
+    font-size:   20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .btn {
+    width:100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+.signuplink {
+    // pointer-events: none;
+
+  color: white;
+  font-family: Work Sans;
+  font-weight: 600;
+}
+
+.signuplink:active{
+  color:white;
+  text-decoration: none;
+
+}
+
+
+
+
+
+.forgotlink {
+  color: white;
+  font-family: Work Sans;
+  font-weight: 600;
+}
+
+.forgotlink:active{
+  color:white;
+  text-decoration: none;
+}
+
+.loginlink{
+   color: white;
+  font-family: Work Sans;
+  font-weight: 600;
+}
+.loginlink:active{
+  color:white;
+  text-decoration: none;
+}
+

@@ -1,36 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-<h2>Movies INDEX</h2>
-
- <div class="search-bar">
-  <div class="search-form row">
-    <div class="form-input">
-  <%= form_tag movies_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a movie"
-  %>
-</div>
-<div class="form-button">
-  <%= submit_tag "Search" %>
-</div>
-<% end %>
- </div>
-</div>
-
-  <div class="row">
-    <div class="card-columns">
-      <% @movies.each do |movie| %>
-        <div class="col-4">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title"><%= link_to movie.name, movie_path(movie) %></h5>
-            </div>
-          </div>
+<div class="container movie-index">
+  <div class="text-center">
+    <div class="mb-2 search-bar">
+      <div class="search-form">
+        <div class="form-input">
+          <%= form_tag movies_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "search-form-control",
+            placeholder: "Find a movie"
+          %>
         </div>
-      <% end %>
+        <div class="form-button">
+          <%#= submit_tag "Search" %>
+        </div>
+        <% end %>
+     </div>
     </div>
   </div>
+<div class="menu-container">
+<div class="browse-title"><i class="fa fa-film"></i> Browse all movies</div>
+<%= link_to cinemas_path, class: 'browse-link' do %>
+  <i class="fas fa-map-marker-alt"></i> Browse all cinemas
+<% end %>
+
 </div>
+  <div class="movie-card-box">
+    <% @movies.each do |movie| %>
+      <%= link_to movie_path(movie), class: 'movie-card' do %>
+         <%= cl_image_tag movie.image %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+

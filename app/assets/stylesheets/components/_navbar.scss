@@ -13,8 +13,7 @@
       padding-right:5px;
       align-self: center;
       a {
-        color: white;
-        font-size: 24px;
+        color: $darkgrey;
         padding: 0px 0px 0px 0px;
         width: auto;
         height: auto;
@@ -24,5 +23,5 @@
 }
 
 .active > a > i {
-  color: black;
+  color: $red;
 }

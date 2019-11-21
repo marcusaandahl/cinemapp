@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get "profile", to: "pages#profile"
+
+  get "/components", to: "pages#components"
+
   get '/dashboard', to: 'dashboards#dashboard', as: :dashboard
 
   devise_for :users

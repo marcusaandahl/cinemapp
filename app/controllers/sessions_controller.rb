@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    @movie = Movie.find(params[:movie_id])
     @sessions = Session.all
   end
 
