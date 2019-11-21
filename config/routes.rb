@@ -6,9 +6,10 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  # GO DIRECTLY TO SESSIONS (SKIP MOVIES/CINEMAS)
+
   resources :movies, only: [:index, :show] do
     resources :sessions, only: [:index, :show] do
-      # resources :seats, only: [:index, :update]
       resources :bookings, only: [:create]
     end
   end

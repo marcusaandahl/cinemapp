@@ -6,4 +6,8 @@ class Seat < ApplicationRecord
   validates :row, presence: true
   validates :column, presence: true
   # scope row + column + roomid
+
+  def name
+    "R#{row}-C#{column}"
+  end
 end
