@@ -1,7 +1,18 @@
-<div class="components-container" style="margin-bottom: 200px" >
+<div class="components-container" style="margin-bottom: 300px" >
   <h2 style="color:white">All the css components will be shown here</h2>
 
-
+    <h3> Map Card</h3>
+  <div class="map-container">
+    <div class="map-card">
+      <%= cl_image_tag("xj4rn787uwrfcxxkoim6",
+        crop: :fill, class: "map-image") %>
+      <div class="map-card-infos">
+        <p id="map-card-darker">Date, time</p>
+        <h2 id="map-card-red">Name of cinema</h2>
+        <p id="map-card-white">City, address</p>
+      </div>
+    </div>
+  </div>
 
 
 <h3 style="margin:100px"> Book card</h3>
@@ -112,4 +123,5 @@
    </div>
   </div>
 </div>
-</div>
+`</div>
+
