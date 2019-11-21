@@ -20,17 +20,14 @@
  </div>
 </div>
 
-  <div class="row">
-    <div class="card-columns">
+
+
+  <div class="movie-card-box">
       <% @movies.each do |movie| %>
-        <div class="col-4">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title"><%= link_to movie.name, movie_path(movie) %></h5>
-            </div>
-          </div>
-        </div>
+      <!-- this image will be a movie.image linked to movie show path -->
+          <img class="movie-card-img" src="https://www.joblo.com/assets/images/joblo/posters/2019/08/joker-poster-main2.jpg">
       <% end %>
-    </div>
   </div>
+
 </div>
+

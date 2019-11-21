@@ -40,28 +40,15 @@
 </div>
   
 </div>
+
+<h3>Movie Index Card</h3>
+ <div class="movie-card-box">
+      <% @movies.each do |movie| %>
+      <!-- this image will be a movie.image linked to movie show path -->
+          <img class="movie-card-img" src="https://www.joblo.com/assets/images/joblo/posters/2019/08/joker-poster-main2.jpg">
+      <% end %>
+  </div>
 <br>
 <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
 
 
-
-
-
-
-
-
-<!-- <div class="component-container">
-  <div class="dashboard-card p-3 mb-3">
-    <h2>Movie title</h2>
-    <p><small>date, time</small></p>
-    <p><small>number</small></p>
-
-  </div>
-</div> -->
-
-<!-- <div class="card p-3 mb-3">
-   <p><strong>Margherita</strong></p>
-            <p><small>Tomato, basil, mozzarella</small></p>
-            <span>£5.95</span>
-          </div>
- -->
