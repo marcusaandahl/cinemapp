@@ -1,15 +1,64 @@
+
 .dashboard-card {
+  margin: 20px;
   background-size: cover;
   background-color: $lightgrey;
   background-position: center;
-  height: 180px;
+  height: 117px;
   display: flex;
   justify-content: center;
+  flex-direction: row;
   align-items: center;
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+.card-date-time {
+  font-family: Work Sans;
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.card-body > p {
+  margin-bottom: 8px;
+}
+
+.card-body > h4 {
+  margin-bottom: 16px;
+}
+
+.movie-title {
+  font-family: Work Sans;
+  font-weight: 500;
+}
+
+.price h6 {
+  font-family: Work Sans;
+  font-weight: 500;
+}
+
+.date-time {
+  font-family: Work Sans;
+  font-weight: 600;
+  font-size: 12px;
+}
+// li {
+//   list-style-type: none;
+//   margin-right: 5px;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-end;
+//   align: center;
+// }
+
+// ul {
+//   padding-left: 0px;
+//   font-family: Work Sans;
+//   font-weight: 600;
+//   font-size: 12px;
+//   margin-bottom: 5px;
+// }
