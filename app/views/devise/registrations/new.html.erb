@@ -1,13 +1,22 @@
-<div class="container">
+<div class="login-container">
   <div class="row">
     <div class="col-12 col-lg-4 offset-lg-4">
-      <div class="form-signup">
-        <h2>Sign up</h2>
+         <div>
+          <%= link_to root_path do %>
+            <i class="fas fa-arrow-left"></i>
+          <% end %>
+      </div>
+      <div class="form-login">
+        <h2>Register</h2>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">
+             <%= f.input :name,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "Full name" }%>
             <%= f.input :email,
                         required: true,
                         autofocus: true,
@@ -22,7 +31,7 @@
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
+            <%= f.button :submit, "Register", class: "btn grey-button" %>
           </div>
         <% end %>
 
