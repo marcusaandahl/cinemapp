@@ -5,5 +5,6 @@ class PagesController < ApplicationController
   end
 
   def components
+    @movies = Movie.all
   end
 end
