@@ -7,6 +7,9 @@
 <!-- make the below items inputs -->
 <%= form_with url: movie_session_bookings_path(@movie, @session), :html => { :id => 'bookings_form' }, method: :post, local: true do |f| %>
   <%#= select :booking, :seat_id, @room.seats.map{|s| [s.name, s.id]}, {} %>
+  <%= f.submit "Book Now", class: "btn btn-primary" %>
+  <p></p>
+
   <div class="row" style="width: 100%">
     <div class="card-columns" style="width: 100%" >
       <% @room.seats.each do |seat| %>
@@ -30,5 +33,4 @@
       <% end %>
     </div>
   </div>
-  <%= f.submit "Book SimpleForm1", class: "btn btn-primary" %>
 <% end %>
