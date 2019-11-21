@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container">
-  <h2>Movies INDEX</h2>
-
   <div class="text-center">
     <div class="mb-2 search-bar">
       <div class="search-form">
@@ -21,8 +19,9 @@
      </div>
     </div>
   </div>
+  <div style="height: 30px"></div>
 
-
+  <h3 class="browse-title">Browse all movies</h3>
   <div class="movie-card-box">
     <% @movies.each do |movie| %>
     <!-- this image will be a movie.image linked to movie show path -->
