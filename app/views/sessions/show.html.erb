@@ -5,9 +5,11 @@
 <%#= button_to 'Book', movie_session_bookings_path(@movie, @session), action: :create, class: "btn btn-primary" %>
 <!-- make this a form (simple_form) -->
 <!-- make the below items inputs -->
+<%= link_to "Go Back", movie_sessions_path(@movie), class: "btn btn-primary" %>
+
 <%= form_with url: movie_session_bookings_path(@movie, @session), :html => { :id => 'bookings_form' }, method: :post, local: true do |f| %>
   <%#= select :booking, :seat_id, @room.seats.map{|s| [s.name, s.id]}, {} %>
-  <%= f.submit "Book Now", class: "btn btn-primary" %>
+  <%= f.submit "Book Selection", class: "btn btn-primary" %>
   <p></p>
 
   <div class="row" style="width: 100%">

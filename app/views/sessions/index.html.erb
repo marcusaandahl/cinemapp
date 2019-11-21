@@ -4,8 +4,14 @@
   <% else @movie.sessions.each do |session| %>
       <ul>
         <li>
-          <%= session.room.cinema.name %> - <%= session.showtime %>
+          <%= session.room.cinema.name %>
+          <p></p>
+          <%= link_to "See Session at #{session.showtime}", movie_session_path(@movie, session), class: "btn btn-primary" %>
         </li>
       </ul>
   <% end %>
  <% end %>
+
+<p></p>
+
+<%= link_to "Go back to Movie", movie_path(@movie), class: "btn btn-primary" %>
