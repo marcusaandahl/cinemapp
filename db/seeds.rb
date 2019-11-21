@@ -174,3 +174,20 @@ cinemas.each do |cinema|
     end
   end
 end
+
+puts 'Creating a session'
+sesh = Session.new(
+  room_id: Cinema.first.rooms.first.id,
+  movie_id: terminator.id,
+  showtime: DateTime.now(),
+  base_price: 20
+)
+sesh.save!
+
+sesh = Session.new(
+  room_id: 2,
+  movie_id: terminator.id,
+  showtime: DateTime.now(),
+  base_price: 20
+)
+sesh.save!

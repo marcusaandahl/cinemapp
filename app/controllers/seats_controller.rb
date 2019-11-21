@@ -5,6 +5,10 @@ class SeatsController < ApplicationController
     @seats = Seat.all
   end
 
+  def show
+    @seat = Seat.find(parms[:id])
+  end
+
   def update
     @seat.update(strong_params)
 

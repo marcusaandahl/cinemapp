@@ -24,8 +24,6 @@ $(document).ready(function(){
     type = "root";
   }
 
-  console.log(type);
-
 
 
   switch (type) {
