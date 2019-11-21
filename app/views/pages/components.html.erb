@@ -1,7 +1,12 @@
 <div class="components-container" style="margin-bottom: 200px" >
 <h2 style="color:white">All the css components will be shown here</h2>
-
-
+  
+<div class="dashboard-card">
+  <div class="card-body">
+    <p class="date-time">DATE, TIME</p>
+    <h4 class="movie-title">Movie title</h4>
+    <h6 class='price'>price</h6>
+  </div>
 
 <h3> Product Card</h3>
   <div class="product-card">
@@ -33,6 +38,7 @@
   <a class="btn white-button" href="#">Login</a>
   </div>
 </div>
+  
 </div>
 
  <div class="home-movie-poster">
@@ -46,3 +52,14 @@
   </a>
   </div>
 </div>
+
+<h3>Movie Index Card</h3>
+ <div class="movie-card-box">
+      <% @movies.each do |movie| %>
+      <!-- this image will be a movie.image linked to movie show path -->
+          <img class="movie-card-img" src="https://www.joblo.com/assets/images/joblo/posters/2019/08/joker-poster-main2.jpg">
+      <% end %>
+  </div>
+<br>
+<%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
+
