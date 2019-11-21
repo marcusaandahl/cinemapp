@@ -7,10 +7,11 @@
       <h4 class="movie-title">Movie title</h4>
       <h6 class='price'>price</h6>
     </div>
+  </div>
 
     <h3> Product Card</h3>
     <div class="product-card">
-      <%#= cl_image_tag("xj4rn787uwrfcxxkoim6",
+      <%= cl_image_tag("xj4rn787uwrfcxxkoim6",
         crop: :fill, class: "product-image") %>
       <div class="product-card-infos">
         <p>ADDRESS</p>
@@ -36,7 +37,7 @@
 
   <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
 
-  <h3>Home carousel item</h3>
+  <h3 style="margin: 100px;">Home carousel item</h3>
   <div class="home-movie-poster">
     <a href="https://www.github.com/"><img src="https://i1.sndcdn.com/artworks-000592403786-dzqnmz-t500x500.jpg">
       <div class="poster-content">
@@ -49,7 +50,7 @@
     </a>
   </div>
 
-  <h3>Movie Index Card</h3>
+  <h3 style="margin:100px">Movie Index Card</h3>
   <div class="movie-card-box">
     <% @movies.each do |movie| %>
       <!-- this image will be a movie.image linked to movie show path -->
