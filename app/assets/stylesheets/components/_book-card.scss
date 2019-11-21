@@ -5,34 +5,32 @@
   justify-content: space-between;
   border-radius: 12px;
   margin:auto;
-}
-
-.card-info {
-  text-align: center;
-  padding: 20px;
-  margin-left: 20px;
-  p {
-    font-family: Work Sans;
-    font-weight: 600;
-    font-size:12px;
-    margin-bottom:0px;
+  .card-info {
+    text-align: center;
+    padding: 20px;
+    margin-left: 20px;
+      p {
+        font-family: Work Sans;
+        font-weight: 600;
+        font-size:12px;
+        margin-bottom:0px;
+      }
+      #price {
+        font-family: Work Sans;
+        font-weight: 600;
+        font-size:16px;
+        color: $red;
+      }
   }
-  #price {
-    font-family: Work Sans;
-    font-weight: 600;
-    font-size:16px;
-    color: $red;
-  }
-}
 
-.button-area {
-  width:50%;
-  margin:auto 0;
-  margin-right: 20px;
-
-  .red-button {
-    width:100%;
-    padding: 10px 40px
+  .button-area {
+    width:50%;
+    margin:auto 0;
+    margin-right: 20px;
+    .red-button {
+      width:100%;
+      padding: 10px 40px
+    }
   }
 }
 
