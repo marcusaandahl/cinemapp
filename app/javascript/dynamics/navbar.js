@@ -16,7 +16,7 @@ $(document).ready(function(){
 
   if ((/[/]movies\w*/).test(window.location.pathname)) {
     type = "movies"
-  } else if ((/[/]bookings\w*/).test(window.location.pathname)) {
+  } else if ((/[/]dashboard\w*/).test(window.location.pathname)) {
     type = "bookings";
   } else if ((/[/]profile\w*/).test(window.location.pathname)) {
     type = "profile";
@@ -34,7 +34,7 @@ $(document).ready(function(){
       $("#navbar-movies-link").addClass("active");
       break;
     case "bookings":
-      $("#navbar-bookings-link").addClass("active");
+      $("#navbar-dashboard-link").addClass("active");
       break;
     case "profile":
       $("#navbar-profile-link").addClass("active");
