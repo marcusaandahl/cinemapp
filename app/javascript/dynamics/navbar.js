@@ -1,7 +1,7 @@
 var curWidth;
 var curHeight;
 
-var ratio = 0.173;
+var ratio = 0.08;
 
 $(document).ready(function(){
   curWidth = $( window ).width();
@@ -47,6 +47,8 @@ $(document).ready(function(){
 
 $(window).resize(function(){
   curWidth = $( window ).width();
-  $("#navbar").height((curWidth*ratio)+"px");
-  //console.log(curWidth*ratio);
+  curHeight = $( window ).height();
+
+  $("#navbar-container").height((curHeight*ratio)+"px");
+  console.log(curWidth*ratio);
 });
