@@ -1,0 +1,45 @@
+ <div class="outer-container">
+
+  <%= cl_image_tag("rvygxupdxvaz7abeshjm",
+    crop: :fill, class: "booking-image") %>
+
+  <div class="booking-info">
+    <div class="infotext">
+      <h2>Joker</h2>
+      <div class="rowinfo">
+        <i class="far fa-calendar myicons"></i>
+        <p> Friday, 29 nov 2019 | 18:35 - 21:35</p>
+      </div>
+      <div class="rowinfo">
+        <i class="fas fa-map-marker-alt myicons"></i>
+        <div>
+          <p id="empire" > Empire bio</p>
+          <h4>Guldbergsgade, Norrebro</h4>
+        </div>
+      </div>
+      <div class="rowinfo">
+        <i class="fas fa-ticket-alt myicons"></i>
+        <p> 120 kr</p>
+      </div>
+    </div>
+
+    <!-- <div class="paymentinfo">
+      <div>
+        <p id="discount">80 kr</p>
+        <p>Cinemapp reduced price</p>
+      </div>
+      <div class="buttonarea">
+        <a class="btn red-button" href="#">Pay</a>
+      </div>
+    </div> -->
+    <div class="buttonarea">
+      <a class="btn red-button payredbutton" href="#">Pay 80kr</a>
+    </div>
+
+  </div>
+  <div>
+    <%= link_to root_path do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  </div>
+</div>

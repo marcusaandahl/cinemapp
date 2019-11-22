@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "profile", to: "pages#profile"
 
   get "/components", to: "pages#components"
-
+  get "/checkout", to: "pages#checkout"
   get '/dashboard', to: 'dashboards#dashboard', as: :dashboard
 
   devise_for :users
