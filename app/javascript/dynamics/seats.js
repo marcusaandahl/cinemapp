@@ -16,16 +16,16 @@ function loadSeats() {
     } else {
       $(this).click(function(){
         $(this).toggleClass("seat-selected");
-        toggleSeatToList($(this).attr("id"), $(this).data("name"));
+        toggleSeatToList($(this).attr("id"), $(this).data("name"), $(this).data("price"), $(this).data("discountprice"));
       });
     }
   });
 }
 
-function toggleSeatToList(seatID, seatName) {
+function toggleSeatToList(seatID, seatName, seatPrice, seatDiscount) {
   if ($("#"+seatID).hasClass("seat-selected") === true) {
     $("#bookings-list > p").hide();
-    $("#bookings-list").append('<div class="seat-list" id="listed-'+seatID+'"><p>'+seatName+'</p></div>');
+    $("#bookings-list").append('<div class="seat-list" id="listed-'+seatID+'"><p>Price: '+seatPrice+' Seat: '+seatName+' Discount Price: '+seatDiscount+'</p></div>');
   } else {
     $("#listed-"+seatID).remove();
     if (document.querySelector('.seat-list') === null) {
