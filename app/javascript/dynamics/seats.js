@@ -24,10 +24,16 @@ function loadSeats() {
 
 function toggleSeatToList(seatID, seatName) {
   if ($("#"+seatID).hasClass("seat-selected") === true) {
-    $("#bookings-list").append('<div id="listed-'+seatID+'"><p>'+seatName+'</p></div>');
+    $("#bookings-list > p").hide();
+    $("#bookings-list").append('<div class="seat-list" id="listed-'+seatID+'"><p>'+seatName+'</p></div>');
   } else {
     $("#listed-"+seatID).remove();
+    if (document.querySelector('.seat-list') === null) {
+      $("#bookings-list > p").show();
+    }
   }
+
+
 
   function buildDiv(seatID, seatName) {
     var elem = document.createElement("div");

@@ -1,4 +1,5 @@
 .sessions-index {
+  font-family: work sans;
   width: 100%;
   margin: unset;
   margin-top: 10px;
@@ -40,5 +41,31 @@
       display:block;
       margin:-21.875% 0;
     }
+  }
+}
+
+#bookings-list {
+  display: flex;
+  color: white;
+  .seat-list {
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-color: $red;
+    color: white;
+    margin-left: 3px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 11px;
+    margin-top: 7px;
+  }
+}
+
+.selected-seats {
+  h2 {
+    font-size: 16px;
+    font-weight: lighter;
   }
 }

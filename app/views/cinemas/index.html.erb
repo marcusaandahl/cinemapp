@@ -30,8 +30,7 @@
     <% @cinemas.each do |cinema| %>
       <div class="row cinema">
         <div class="product-image">
-        <%= image_tag(cinema.image,
-          crop: :fill) %>
+        <%= image_tag(cinema.image) %>
         </div>
         <div class="product-card-infos">
           <h2><%= cinema.name %></h2>
