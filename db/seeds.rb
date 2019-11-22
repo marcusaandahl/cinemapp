@@ -183,14 +183,21 @@ sesh = Session.new(
   base_price: 20
 )
 sesh.save!
+sesh = Session.new(
+  room_id: Cinema.last.rooms.second.id,
+  movie_id: terminator.id,
+  showtime: DateTime.now + 12.hours,
+  base_price: 20
+)
+sesh.save!
 
-# sesh = Session.new(
-#   room_id: 2,
-#   movie_id: terminator.id,
-#   showtime: DateTime.now(),
-#   base_price: 20
-# )
-# sesh.save!
+sesh = Session.new(
+  room_id: Cinema.second.rooms.first.id,
+  movie_id: terminator.id,
+  showtime: DateTime.now(),
+  base_price: 20
+)
+sesh.save!
 
 
 
