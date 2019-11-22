@@ -1,8 +1,70 @@
+.session-show {
+  margin: unset;
+  margin-top: 10px;
+  h2 {
+    color: white;
+    font-family: Work Sans;
+    font-size: 24px;
+  }
+}
+
 .seat-selected {
-  background-color: red;
+  background-color: $red;
+  color: white;
 }
 
 .booked {
-  background-color: blue;
+  background-color: $darkgrey;
+  color: white;
   pointer-events: none;
+}
+
+.card.seat {
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.seats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 2px;
+  // direction: rtl;
+}
+
+
+.card-title {
+  font-size: 11px;
+  margin-top: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: unset;
+}
+
+.booking-button {
+  display: flex;
+  width: 40%;
+  .red-button {
+    width: 100%;
+  }
+}
+
+.screen {
+  text-align: center;
+  background-color: white;
+  margin-bottom: 3px;
+  opacity: 0.3;
+  border-radius: 5px;
+
+  h3 {
+    text-transform: uppercase;
+    color: $darkergrey;
+    font-size: 12px;
+    opacity: 1;
+  }
 }
