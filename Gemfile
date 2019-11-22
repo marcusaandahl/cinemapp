@@ -20,11 +20,6 @@ gem 'webpacker'
 gem 'web-console', '>= 3.3.0'
 gem 'cloudinary', '~> 1.9.1'
 
-group :development do
-  gem 'web-console', '>= 3.3.0'
-  gem 'cloudinary', '~> 1.9.1'
-end
-
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
