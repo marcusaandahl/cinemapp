@@ -1,0 +1,36 @@
+
+.account-card {
+  margin: 20px;
+  background-size: cover;
+  background-color: $lightgrey;
+  background-position: center;
+  height: 117px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 12px;
+  box-shadow: 0 10px 10px -9px black;
+  padding: 20px;
+}
+
+.account-body {
+  font-family: Work Sans;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.fullname-account {
+  margin-bottom: 8px;
+  font-family: Work Sans;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.account-body > h6 {
+  font-family: Work Sans;
+  font-weight: 500;
+  font-size: 12px
+}

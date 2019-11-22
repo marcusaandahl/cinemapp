@@ -6,14 +6,14 @@
   background-position: center;
   height: 117px;
   display: flex;
-  justify-content: center;
   flex-direction: row;
   align-items: center;
   color: white;
   font-size: 24px;
   font-weight: bold;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 10px -9px black;
+  padding: 20px;
 }
 
 .card-date-time {
@@ -23,11 +23,11 @@
   margin-bottom: 5px;
 }
 
-.card-body > p {
+.dashcard-body > p {
   margin-bottom: 8px;
 }
 
-.card-body > h4 {
+.dashcard-body > h4 {
   margin-bottom: 16px;
 }
 

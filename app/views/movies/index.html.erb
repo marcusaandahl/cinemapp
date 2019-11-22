@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <h2>Movies INDEX</h2>
-
+<div class="container movie-index">
   <div class="text-center">
     <div class="mb-2 search-bar">
       <div class="search-form">
@@ -21,14 +19,19 @@
      </div>
     </div>
   </div>
+<div class="menu-container">
+<div class="browse-title"><i class="fa fa-film"></i> Browse all movies</div>
+<%= link_to cinemas_path, class: 'browse-link' do %>
+  <i class="fas fa-map-marker-alt"></i> Browse all cinemas
+<% end %>
 
-
+</div>
   <div class="movie-card-box">
     <% @movies.each do |movie| %>
-    <!-- this image will be a movie.image linked to movie show path -->
-      <img class="movie-card-img" src="https://www.joblo.com/assets/images/joblo/posters/2019/08/joker-poster-main2.jpg">
+      <%= link_to movie_path(movie), class: 'movie-card' do %>
+         <%= cl_image_tag movie.image %>
+      <% end %>
     <% end %>
   </div>
-
 </div>
 

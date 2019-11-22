@@ -75,29 +75,36 @@ puts 'saving users'
 
 puts 'Creating cinemas'
 
+url1 = "http://www.cinema.com.my/images/news/2019/7n_malaysianewcinemas00.jpg"
 empire = Cinema.new(
  name: "Empire Cinema",
  address: "Guldbergsgade 29F, 2200 København"
 )
+ empire.image = url1
 empire.save!
 
+url2 = "https://files.guidedanmark.org/files/382/174564_Park_Bio.jpg?qfix"
 park = Cinema.new(
  name: "Park Bio",
  address: "Østerbrogade 79, 2100 København"
 )
+park.image = url2
 park.save!
 
+url3 = "https://www.airbnb.com/google_place_photo?photoreference=CmRaAAAAe5WJ435w4SOA0omQku7aZZhjp4YXwcrgayN6R_eRmBMo8PfZLZtXVnAxZj4uU7obIvpU9uOUAIQ0ajaGWGVts1NOVhgKqsjw9T0B1pIrUECVVVrj4Dfb1Zhc-JxwUaQmEhCkIyRFHpttf-kMGEjZbBgCGhRNjEvKsmi8Qa-jWsWEbEjq41IbLg&maxwidth=1000&maxheight=1000&place_id=31244"
 falconer = Cinema.new(
  name: "Nordic Film Cinemas Falconer",
  address: "Sylows Alle 15, 2000 Frederiksberg"
 )
+falconer.image = url3
 falconer.save!
 
-
+url4 = "https://www.kino.dk/sites/default/files/styles/k_16-9_big/public/cinema/paladsny.jpg"
 palads = Cinema.new(
  name: "Palads Teatret",
  address: "Axeltorv 9, 1609 København"
 )
+palads.image = url4
 palads.save!
 
 puts 'saving cinemas'
@@ -167,3 +174,20 @@ cinemas.each do |cinema|
     end
   end
 end
+
+puts 'Creating a session'
+sesh = Session.new(
+  room_id: Cinema.first.rooms.first.id,
+  movie_id: terminator.id,
+  showtime: DateTime.now(),
+  base_price: 20
+)
+sesh.save!
+
+sesh = Session.new(
+  room_id: 2,
+  movie_id: terminator.id,
+  showtime: DateTime.now(),
+  base_price: 20
+)
+sesh.save!

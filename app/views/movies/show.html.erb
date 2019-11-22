@@ -3,4 +3,7 @@
 <%= cl_image_tag(@movie.image,
       width: 400, height: 300, crop: :fill) %>
 
-<%= link_to "Go Back", movies_path %>
+<%= link_to "See Sessions", movie_sessions_path(@movie), class: "btn btn-primary" %>
+<p></p>
+<p></p>
+<%= link_to "Go Back", movies_path, class: "btn btn-primary" %>

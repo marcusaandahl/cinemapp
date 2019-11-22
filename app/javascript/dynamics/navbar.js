@@ -1,7 +1,7 @@
 var curWidth;
 var curHeight;
 
-var ratio = 0.173;
+var ratio = 0.08;
 
 $(document).ready(function(){
   curWidth = $( window ).width();
@@ -16,15 +16,13 @@ $(document).ready(function(){
 
   if ((/[/]movies\w*/).test(window.location.pathname)) {
     type = "movies"
-  } else if ((/[/]bookings\w*/).test(window.location.pathname)) {
+  } else if ((/[/]dashboard\w*/).test(window.location.pathname)) {
     type = "bookings";
   } else if ((/[/]profile\w*/).test(window.location.pathname)) {
     type = "profile";
   } else if ((/[/]/).test(window.location.pathname)) {
     type = "root";
   }
-
-  console.log(type);
 
 
 
@@ -36,7 +34,7 @@ $(document).ready(function(){
       $("#navbar-movies-link").addClass("active");
       break;
     case "bookings":
-      $("#navbar-bookings-link").addClass("active");
+      $("#navbar-dashboard-link").addClass("active");
       break;
     case "profile":
       $("#navbar-profile-link").addClass("active");
@@ -49,6 +47,8 @@ $(document).ready(function(){
 
 $(window).resize(function(){
   curWidth = $( window ).width();
-  $("#navbar").height((curWidth*ratio)+"px");
-  //console.log(curWidth*ratio);
+  curHeight = $( window ).height();
+
+  $("#navbar-container").height((curHeight*ratio)+"px");
+  console.log(curWidth*ratio);
 });
