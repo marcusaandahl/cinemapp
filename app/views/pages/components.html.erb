@@ -29,9 +29,14 @@
 
 
 
-
-
-
+ <h3 style="margin:100px"> Account card</h3>
+  <div class="account-card">
+    <div class="account-body">
+      <p class="fullname-account">Firstname Lastname</p>
+      <h6 class="phonenumber-account">Phonenumber</h6>
+      <h6 class='address-account'>Address</h6>
+    </div>
+  </div>
 
 
 
@@ -39,7 +44,7 @@
 
   <h3 style="margin:100px"> Dashboard card</h3>
   <div class="dashboard-card">
-    <div class="card-body">
+    <div class="dashcard-body">
       <p class="date-time">DATE, TIME</p>
       <h4 class="movie-title">Movie title</h4>
       <h6 class='price'>price</h6>
@@ -104,24 +109,24 @@
   </div>
 
 
-<h3>Search bar</h3>
-<div class="text-center">
-  <div class="mb-2 search-bar">
-    <div class="search-form">
-      <div class="form-input">
-        <%= form_tag movies_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "search-form-control",
-          placeholder: "Find a movie"
-        %>
-      </div>
-      <div class="form-button">
-        <%#= submit_tag "Search" %>
-      </div>
-      <% end %>
-   </div>
+  <h3>Search bar</h3>
+  <div class="text-center">
+    <div class="mb-2 search-bar">
+      <div class="search-form">
+        <div class="form-input">
+          <%= form_tag movies_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "search-form-control",
+            placeholder: "Find a movie"
+          %>
+        </div>
+        <div class="form-button">
+          <%#= submit_tag "Search" %>
+        </div>
+        <% end %>
+     </div>
+    </div>
   </div>
 </div>
-`</div>
 
