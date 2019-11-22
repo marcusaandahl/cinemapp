@@ -1,10 +1,8 @@
 
 .dashboard-card {
+  width:100%;
   margin: 20px;
-  background-size: cover;
   background-color: $lightgrey;
-  background-position: center;
-  height: 117px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -28,7 +26,7 @@
 }
 
 .dashcard-body > h4 {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .movie-title {
@@ -36,9 +34,11 @@
   font-weight: 500;
 }
 
-.price h6 {
+h6 {
   font-family: Work Sans;
   font-weight: 500;
+  font-size:24px;
+  margin-left:5px;
 }
 
 .date-time {
@@ -46,6 +46,22 @@
   font-weight: 600;
   font-size: 12px;
 }
+
+.tickets-price-info{
+    .dashicons{
+      margin-top: 5px;
+      font-size: 20px;
+      margin-right:5px;
+    }
+      display:flex;
+      .tickets-info{
+        display:flex;
+        margin-right:50px;
+      }
+      .price-info{
+        display:flex;
+      }
+    }
 // li {
 //   list-style-type: none;
 //   margin-right: 5px;
