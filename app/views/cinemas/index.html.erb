@@ -5,7 +5,7 @@
     <div class="mb-2 search-bar">
       <div class="search-form">
         <div class="form-input">
-          <%= form_tag movies_path, method: :get do %>
+          <%= form_tag cinemas_path, method: :get do %>
           <%= text_field_tag :query,
             params[:query],
             class: "search-form-control",
@@ -29,9 +29,9 @@
   <div class="product-card">
     <% @cinemas.each do |cinema| %>
       <div class="row cinema">
-        <div>
+        <div class="product-image">
         <%= image_tag(cinema.image,
-          crop: :fill, class: "product-image") %>
+          crop: :fill) %>
         </div>
         <div class="product-card-infos">
           <h2><%= cinema.name %></h2>

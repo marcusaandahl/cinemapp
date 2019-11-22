@@ -7,6 +7,7 @@
   .cinema {
     padding-bottom: 5px;
     padding-left: 15px;
+    justify-content: flex-start;
   }
 
   img {
@@ -15,6 +16,7 @@
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 10px 10px -9px black;
+  crop: fill;
   }
 
   h2 {
@@ -55,15 +57,12 @@
 
 }
   .product-card-infos {
-    padding:10px;
-    padding-top: 5px;
-    display:flex;
+    padding-left: 10px;
+    padding-top: 6px;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-weight: 600;
     max-width: 70%;
-    // line-height: 1.5em;
-    height:100%;
-  padding-left: 10px;
+    height: 100%;
   }
 }
