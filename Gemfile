@@ -17,10 +17,10 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
-gem 'web-console', '>= 3.3.0'
 gem 'cloudinary', '~> 1.9.1'
 
 group :development, :test do
+  gem 'web-console', '>= 3.3.0'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
