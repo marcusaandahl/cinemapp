@@ -1,10 +1,57 @@
-<h2>Bookings</h2>
+<div class="outer-container">
+  <div>
+    <%= link_to root_path do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  </div>
 
-<h5>Bookings</h5>
-<% if @my_bookings.empty? %>
-  <p>You have no current bookings</p>
-<% else @my_bookings.each do |booking| %>
-  <p>  This Is a booking for seat <%= booking.seat_id %></p>
+  <div class="dashboard-container">
+  <h2>Dashboard</h2>
+
+  <h3>Current tickets</h3>
+
+
+  <% if @my_bookings.empty? %>
+    <p>You have no current bookings</p>
+  <% else @my_bookings.each do |booking| %>
+  <div class="dashboard-card">
+    <div class="dashcard-body">
+    <p>  This Is a booking for seat <%= booking.seat_id %></p>
+      <p class="date-time">DATE, TIME</p>
+      <h4 class="movie-title">Movie title</h4>
+      <div class="tickets-price-info">
+        <div class="tickets-info">
+          <i class="fas fa-ticket-alt dashicons"></i>
+          <h6 class="price">3</h6>
+        </div>
+        <div class="price-info">
+          <i class="fas fa-money-bill-alt dashicons"></i>
+          <h6 class="price">80kr</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+    <% end %>
   <% end %>
-<% end %>
 
+  <h2>History</h2>
+<div class="dashboard-card">
+    <div class="dashcard-body">
+      <p class="date-time">DATE, TIME</p>
+      <h4 class="movie-title">Movie title</h4>
+      <div class="tickets-price-info">
+        <div class="tickets-info">
+          <i class="fas fa-ticket-alt dashicons"></i>
+          <h6 class="price">3</h6>
+        </div>
+        <div class="price-info">
+          <i class="fas fa-money-bill-alt dashicons"></i>
+          <h6 class="price">80kr</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+</div>
