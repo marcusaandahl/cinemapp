@@ -7,7 +7,7 @@
   border-radius: 12px;
   background: $red;
   width:200px;     // This value has to be changed accordingly to the occasion
-  box-shadow: 0 10px 10px -9px $red;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .red-button:hover {
   color:white;

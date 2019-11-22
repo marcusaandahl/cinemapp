@@ -80,7 +80,7 @@ empire = Cinema.new(
  name: "Empire Cinema",
  address: "Guldbergsgade 29F, 2200 København"
 )
- empire.image = url1
+empire.image = url1
 empire.save!
 
 url2 = "https://files.guidedanmark.org/files/382/174564_Park_Bio.jpg?qfix"

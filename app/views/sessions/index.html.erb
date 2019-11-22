@@ -6,7 +6,7 @@
         <li>
           <%= session.room.cinema.name %>
           <p></p>
-          <%= link_to "See Session at #{session.showtime}", movie_session_path(@movie, session), class: "btn btn-primary" %>
+          <%= link_to "#{session.showtime}", movie_session_path(@movie, session), class: "btn red-button" %>
         </li>
       </ul>
   <% end %>
@@ -14,4 +14,4 @@
 
 <p></p>
 
-<%= link_to "Go back to Movie", movie_path(@movie), class: "btn btn-primary" %>
+<%= link_to "Go back to Movie", movie_path(@movie), class: "btn red-button" %>
