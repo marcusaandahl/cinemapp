@@ -184,10 +184,26 @@ sesh = Session.new(
 )
 sesh.save!
 
-sesh = Session.new(
-  room_id: 2,
-  movie_id: terminator.id,
-  showtime: DateTime.now(),
-  base_price: 20
-)
-sesh.save!
+# sesh = Session.new(
+#   room_id: 2,
+#   movie_id: terminator.id,
+#   showtime: DateTime.now(),
+#   base_price: 20
+# )
+# sesh.save!
+
+
+
+
+
+########  BOokings
+
+puts 'creating a booking'
+
+booking1 = Booking.new(
+  user: henderson,
+  session: sesh,
+  # seat:seat,
+  discounted_price:80,
+  )
+booking1.save
