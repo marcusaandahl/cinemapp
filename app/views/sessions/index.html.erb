@@ -1,17 +1,22 @@
-
+<div class="container sessions-index">
+<h2><%= @movie.name %></h2>
+<div class="img-container">
+<%= cl_image_tag(@movie.image) %>
+</div>
+<h2>Upcoming sessions:</h2>
 <% if @movie.sessions.empty? %>
   <p>Sorry, there are no sessions available for this film</p>
   <% else @movie.sessions.each do |session| %>
-      <ul>
-        <li>
-          <%= session.room.cinema.name %>
-          <p></p>
-          <%= link_to "#{session.showtime}", movie_session_path(@movie, session), class: "btn red-button" %>
-        </li>
-      </ul>
+      <div class="movie-sessions">
+          <h3><%= session.room.cinema.name %></h3>
+          <h4>Next sessions:</h4>
+          <%= link_to "#{session.showtime.strftime("%I:%M%p")}", movie_session_path(@movie, session), class: "btn red-button" %>
+      </div>
+      <div style="height:10px"></div>
   <% end %>
  <% end %>
 
-<p></p>
+<div style="height:10px"></div>
 
-<%= link_to "Go back to Movie", movie_path(@movie), class: "btn red-button" %>
+<%= link_to "Go back to movie", movie_path(@movie), class: "btn grey-button" %>
+</div>
