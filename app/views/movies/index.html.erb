@@ -28,7 +28,7 @@
 </div>
   <div class="movie-card-box">
     <% @movies.each do |movie| %>
-      <%= link_to movie_path(movie), class: 'movie-card' do %>
+      <%= link_to movie_sessions_path(movie), class: 'movie-card' do %>
          <%= cl_image_tag movie.image %>
       <% end %>
     <% end %>
