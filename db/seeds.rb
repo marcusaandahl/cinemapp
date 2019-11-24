@@ -163,12 +163,14 @@ cinemas.each do |cinema|
      name: "Room #{i}",
      cinema: cinema,
     )
-    6.times do |row|
-      10.times do |column|
+    2.times do |row|
+      5.times do |column|
         seat = Seat.create(
           row: row,
           column: column,
           room: room,
+          booked:[true, false].sample
+          # booked:false
           )
       end
     end
@@ -177,25 +179,34 @@ end
 
 puts 'Creating a session'
 sesh = Session.new(
-  room_id: Cinema.first.rooms.first.id,
-  movie_id: terminator.id,
-  showtime: DateTime.now(),
-  base_price: 20
-)
-sesh.save!
-sesh = Session.new(
-  room_id: Cinema.last.rooms.second.id,
-  movie_id: terminator.id,
+  room: Cinema.first.rooms.first,
+  movie: terminator,
   showtime: DateTime.now + 12.hours,
-  base_price: 20
+  base_price: 160,
+  max_discount: 40,
+  min_empty_seats:30, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  hours_for_discount:12,
+)
+sesh.save!
+sesh = Session.new(
+  room: Cinema.last.rooms.second,
+  movie: terminator,
+  showtime: DateTime.now + 12.hours,
+  base_price: 160,
+  max_discount: 40,
+  min_empty_seats:30, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  hours_for_discount:12,
 )
 sesh.save!
 
 sesh = Session.new(
-  room_id: Cinema.second.rooms.first.id,
-  movie_id: terminator.id,
-  showtime: DateTime.now(),
-  base_price: 20
+  room: Cinema.second.rooms.first,
+  movie: terminator,
+  showtime: DateTime.now + 12.hours,
+  base_price: 160,
+  max_discount: 40,
+  min_empty_seats:30, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  hours_for_discount:12,
 )
 sesh.save!
 
@@ -203,7 +214,7 @@ sesh.save!
 
 
 
-########  BOokings
+########  Bookings
 
 puts 'creating a booking'
 
