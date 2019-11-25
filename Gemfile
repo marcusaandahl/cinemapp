@@ -17,6 +17,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+gem 'money-rails'
+gem 'stripe'
+
 gem 'cloudinary', '~> 1.9.1'
 
 group :development, :test do

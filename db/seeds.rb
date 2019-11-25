@@ -219,12 +219,16 @@ sessions = Session.all
 puts 'creates an order'
 
 order1 = Order.new(
-  user: henderson
+  user: henderson,
+  state: "completed",
+  price: 0
   )
 order1.save!
 
 order2 = Order.new(
-  user:marcus
+  user:marcus,
+  state: "completed",
+  price: 0
   )
 order2.save!
 
@@ -265,3 +269,5 @@ booking4 = Booking.new(
   )
 booking4.save!
 
+order1.update(price: order1.price_update)
+order2.update(price: order2.price_update)

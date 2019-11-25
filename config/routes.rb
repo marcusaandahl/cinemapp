@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get "profile", to: "pages#profile"
 
   get "/components", to: "pages#components"
-  get "/checkout", to: "pages#checkout"
   get '/dashboard', to: 'dashboards#dashboard', as: :dashboard
 
   devise_for :users
@@ -13,8 +12,12 @@ Rails.application.routes.draw do
 
   resources :movies, only: [:index, :show] do
     resources :sessions, only: [:index, :show] do
-      resources :orders, only: [:create]
+      resources :orders, only: :create
     end
+  end
+
+  resources :orders, only: :show do
+    resources :payments, only: :new
   end
 
   resources :cinemas, only: [:index, :show] do
