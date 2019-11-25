@@ -16,6 +16,10 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'geocoder'
+
+gem 'money-rails'
+gem 'stripe'
 
 gem 'cloudinary', '~> 1.9.1'
 

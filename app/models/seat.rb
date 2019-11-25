@@ -9,6 +9,6 @@ class Seat < ApplicationRecord
 
   def name
     letters = ('A'..'Z').to_a
-    "#{letters[row]}#{column}"
+    "#{letters[row]}#{column + 1}"
   end
 end
