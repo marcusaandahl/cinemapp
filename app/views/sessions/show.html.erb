@@ -55,14 +55,14 @@
 </div>
 
   <div class="saving">
-    <h1><span id="saving-span"></span></h1>
+    <h1><i class="fas fa-coins"></i>  You save <span id="saving-span">0</span> kr</h1>
   </div>
 
   <div class="book-card">
     <div class="card-info">
-      <p class="amount_tickets"><span id="selected-span"></span> tickets</p>
+      <p class="amount_tickets"><span id="selected-span">0</span> tickets</p>
       <p><span id="original-price"></span></p>
-      <p><i class="fas fa-tags"></i> <span id="discounted-price"></span></p>
+      <p id="red"><i class="fas fa-tags"></i> <span id="discounted-price"></span></p>
     </div>
     <div class="button-area">
       <%= f.submit "Book", class: "btn red-button" %>

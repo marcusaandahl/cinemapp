@@ -28,7 +28,7 @@ const displayPrice = () => {
   discountedSpan.innerHTML = discountedSum + " kr"
 
   const savingSpan = document.querySelector('#saving-span');
-  savingSpan.innerHTML = "• You save " + (baseSum -= discountedSum) + " kr"
+  savingSpan.innerHTML = baseSum -= discountedSum
 }
 
 
