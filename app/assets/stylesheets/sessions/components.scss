@@ -13,11 +13,21 @@
     font-family: Work Sans;
     font-size: 18px;
   }
+  .book-card {
+    width: 100%
+  }
+
+  .saving {
+    width: 100%;
+    margin: unset;
+  }
 }
 
 .date-and-time {
   display: flex;
   justify-content: flex-start;
+  width: 100%;
+  margin: unset;
 }
 
 .seat-selected {
@@ -42,6 +52,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 2px;
+  width: 100%;
   // direction: rtl;
 }
 
@@ -51,16 +62,14 @@
   margin-top: 10px;
 }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin: unset;
-}
-
 .back-button {
   width: 100%;
   margin: unset;
+  display: flex;
+  justify-content: center;
+  .grey-button {
+    width: 100%;
+  }
 }
 
 .screen {
@@ -87,4 +96,13 @@
 #discounted-price {
   font-size: 14px;
   color: $red;
+}
+
+.saving {
+  height: 30px;
+  h3 {
+    color: $red;
+    font-weight: bold;
+    font-size: 36px;
+  }
 }

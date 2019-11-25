@@ -10,8 +10,8 @@ $(document).ready(function(i){
 const displayPrice = () => {
   // get all the selected seats
   const selectedSeats = document.querySelectorAll('.seat-selected');
-  // const selectedSpan = document.querySelector('#selected-seats');
-  // selectedSpan.innerHTML = selectedSeats.count;
+  const selectedSpan = document.querySelector('#selected-span');
+  selectedSpan.innerHTML = selectedSeats.length;
   // for each sum the base prices
   // and sum the discounted prices
   let baseSum = 0;
@@ -26,6 +26,9 @@ const displayPrice = () => {
   originalSpan.innerHTML = baseSum + " kr"
   const discountedSpan = document.querySelector('#discounted-price');
   discountedSpan.innerHTML = discountedSum + " kr"
+
+  const savingSpan = document.querySelector('#saving-span');
+  savingSpan.innerHTML = "You save " + (baseSum -= discountedSum) + " kr"
 }
 
 

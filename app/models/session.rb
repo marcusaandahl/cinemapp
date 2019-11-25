@@ -6,9 +6,6 @@ class Session < ApplicationRecord
   validates :showtime, presence: true
   validates :base_price, presence: true
 
- end
-
-
   def current_discounted_price
     datenow = DateTime.now
     time_diff = (showtime - datenow).fdiv(3600)
@@ -41,3 +38,4 @@ private
     (diff_time >= hours_for_discount) ? (p "Since there is more than #{hours_for_discount} hours #{discounted_price}") : (p "Since there is less than #{hours_for_discount} hours #{(discounted_price -= (discounted_price - min_price).fdiv(5))}")
     return discounted_price.ceil
   end
+end
