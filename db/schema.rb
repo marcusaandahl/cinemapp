@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2019_11_25_150719) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "movies", force: :cascade do |t|

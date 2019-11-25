@@ -28,9 +28,11 @@
 
   <div class="product-card">
     <% @cinemas.each do |cinema| %>
+     <%= link_to cinema_path(cinema), class: 'cinema-card' do %>
       <div class="row cinema">
-        <div class="product-image">
-        <%= image_tag(cinema.image) %>
+        <div>
+        <%= cl_image_tag(cinema.image,
+          crop: :fill, class: "product-image") %>
         </div>
         <div class="product-card-infos">
           <h2><%= cinema.name %></h2>
@@ -38,6 +40,7 @@
           <p id="darker">Copenhagen</p>
         </div>
       </div>
+    <% end %>
     <% end %>
   </div>
 </div>
