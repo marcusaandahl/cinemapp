@@ -15,8 +15,6 @@ class Session < ApplicationRecord
     else
       weekend = false
     end
-    p min_empty_seats
-    p hours_for_discount
     p "Considering initial price of: #{base_price}, a max discount accepted of #{max_discount}%, with #{room.seats.where(booked:false).count} out of #{room.seats.count} available seats. Being a #{today.strftime("%A")} and #{time_diff} hours until showtime. With discount applied only #{hours_for_discount} hours before showtime and with increment in price if more than #{min_empty_seats}% seats are booked"
     discounted_price(base_price, max_discount, room.seats.where(booked:false).count, room.seats.count, weekend, time_diff, min_empty_seats, hours_for_discount)
   end
@@ -38,6 +36,6 @@ class Session < ApplicationRecord
 
     weekend ? (discounted_price += (price - discounted_price).fdiv(5)) : discounted_price
     (diff_time >= hours_for_discount) ? (p "Since there is more than #{hours_for_discount} hours #{discounted_price}") : (p "Since there is less than #{hours_for_discount} hours #{(discounted_price -= (discounted_price - min_price).fdiv(5))}")
-    return discounted_price
+    return discounted_price.ceil
   end
 end
