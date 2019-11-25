@@ -169,7 +169,7 @@ cinemas.each do |cinema|
           row: row,
           column: column,
           room: room,
-          booked:[true, false].sample
+          booked:[true, false, true, true, true].sample
           # booked:false
           )
       end
@@ -184,8 +184,8 @@ sesh = Session.new(
   showtime: DateTime.now + 24.hours,
   base_price: 160,
   max_discount: 40,
-  min_empty_seats:30, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
-  hours_for_discount:12,
+  min_empty_seats:40, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  hours_for_discount:24,
 )
 sesh.save!
 
@@ -195,8 +195,8 @@ sesh = Session.new(
   showtime: DateTime.now + 36.hours,
   base_price: 160,
   max_discount: 40,
-  min_empty_seats:30, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
-  hours_for_discount:12,
+  min_empty_seats:40, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  hours_for_discount:24,
 )
 sesh.save!
 
@@ -206,8 +206,8 @@ sesh = Session.new(
   showtime: DateTime.now + 12.hours,
   base_price: 160,
   max_discount: 40,
-  min_empty_seats:30, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
-  hours_for_discount:12,
+  min_empty_seats:40, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  hours_for_discount:24,
 )
 sesh.save!
 sessions = Session.all
