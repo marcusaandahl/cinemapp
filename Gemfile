@@ -18,6 +18,9 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'geocoder'
 
+gem 'money-rails'
+gem 'stripe'
+
 gem 'cloudinary', '~> 1.9.1'
 
 group :development, :test do

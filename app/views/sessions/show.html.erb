@@ -17,7 +17,7 @@
   <!-- make the below items inputs -->
 
 
-  <%= form_with url: movie_session_bookings_path(@movie, @session), :html => { :id => 'bookings_form' }, method: :post, local: true do |f| %>
+  <%= form_with url: movie_session_orders_path(@movie, @session), :html => { :id => 'bookings_form' }, method: :post, local: true do |f| %>
   <%#= select :booking, :seat_id, @room.seats.map{|s| [s.name, s.id]}, {} %>
   <div class="screen">
     <h3>Screen</h3>

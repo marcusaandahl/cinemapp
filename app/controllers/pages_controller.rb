@@ -4,9 +4,6 @@ class PagesController < ApplicationController
   def home
   end
 
-  def checkout
-  end
-
   def components
     @movies = Movie.all
   end

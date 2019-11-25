@@ -1,0 +1,73 @@
+ <div class="outer-container">
+
+  <%= cl_image_tag("rvygxupdxvaz7abeshjm",
+    crop: :fill, class: "booking-image") %>
+
+  <div class="booking-info">
+    <div class="infotext">
+      <h2>Joker</h2>
+      <div class="rowinfo">
+        <i class="far fa-calendar myicons"></i>
+        <p> Friday, 29 nov 2019 | 18:35 - 21:35</p>
+      </div>
+      <div class="rowinfo">
+        <i class="fas fa-map-marker-alt myicons"></i>
+        <div>
+          <p id="empire" > Empire bio</p>
+          <h4>Guldbergsgade, Norrebro</h4>
+        </div>
+      </div>
+      <div class="rowinfo">
+        <i class="fas fa-map-marker-alt myicons"></i>
+        <div>
+          <p id="state" > Order State</p>
+          <h4><%= @order.state %></h4>
+        </div>
+      </div>
+      <div class="rowinfo">
+        <i class="fas fa-map-marker-alt myicons"></i>
+        <div>
+          <p id="state" > Tickets Amount</p>
+          <h4><%= @order.bookings.count %> tickets</h4>
+        </div>
+      </div>
+      <div class="rowinfo">
+        <i class="fas fa-ticket-alt myicons"></i>
+        <p> <%= humanized_money_with_symbol(@order.price) %> </p> <!-- ORDER PRICE ACCESSIBLE IN @ORDER -->
+      </div>
+    </div>
+
+    <!-- <div class="paymentinfo">
+      <div>
+        <p id="discount">80 kr</p>
+        <p>Cinemapp reduced price</p>
+      </div>
+      <div class="buttonarea">
+        <a class="btn red-button" href="#">Pay</a>
+      </div>
+    </div> -->
+    <% if @order.state = "pending" %>
+      <div class="buttonarea">
+         <button id="pay" class="btn red-button payredbutton">Pay <%= humanized_money_with_symbol(@order.price) %></button>
+
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+          const paymentButton = document.getElementById('pay');
+          paymentButton.addEventListener('click', () => {
+            const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+            stripe.redirectToCheckout({
+              sessionId: '<%= @order.checkout_session_id %>',
+            });
+          });
+        </script>
+
+      </div>
+    <% end %>
+
+  </div>
+  <div>
+    <%= link_to movie_session_path(@movie, @session) do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  </div>
+</div>
