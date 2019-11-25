@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_184939) do
     t.bigint "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "booked"
+    t.boolean "booked", default: false
     t.index ["room_id"], name: "index_seats_on_room_id"
   end
 

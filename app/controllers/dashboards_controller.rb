@@ -1,5 +1,6 @@
 class DashboardsController < ApplicationController
   def dashboard
-    @my_bookings = Booking.where(user: current_user)
+    @my_orders = Order.where(user: current_user)
+    @my_bookings = @my_orders.first.bookings
   end
 end
