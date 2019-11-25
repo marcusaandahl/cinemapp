@@ -17,7 +17,8 @@
   <% else @my_bookings.each do |booking| %>
   <div class="dashboard-card">
     <div class="dashcard-body">
-      <p class="date-time"><%= booking.session.showtime %></p>
+      <p class="date-time"><%= booking.session.showtime.strftime("%d %b %Y %R") %></p>
+      <!-- <p class="date-time"><%= booking.session.showtime.strftime("%R") %></p> -->
       <h4 class="movie-title"><%= booking.session.movie.name %></h4>
     <!-- <p>  This Is a booking for seat <%= booking.seat_id %></p> -->
       <div class="tickets-price-info">
@@ -31,6 +32,9 @@
         </div>
       </div>
     </div>
+    <%= image_tag("QR.png", class: "QR") %>
+    <%= image_tag("ticket.png", class: "ticketback") %>
+
   </div>
     <% end %>
   <% end %>
@@ -54,6 +58,8 @@
         </div>
       </div>
     </div>
+  <%= image_tag("ticket.png", class: "ticketback") %>
+
   </div>
 
 
