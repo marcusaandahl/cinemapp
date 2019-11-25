@@ -1,4 +1,4 @@
-<div class="outer-container">
+<div class="outter-container">
   <div>
     <%= link_to root_path do %>
       <i class="fas fa-arrow-left"></i>
@@ -6,35 +6,43 @@
   </div>
 
   <div class="dashboard-container">
-  <h2>Dashboard</h2>
-
-  <h3>Current tickets</h3>
-
+  <h2>Tickets</h2>
+<div class="type-amount">
+  <h3>Active</h3>
+  <%= link_to "See all (#{@my_bookings.count})", dashboard_path, class: "link-dash" %>
+</div>
 
   <% if @my_bookings.empty? %>
     <p>You have no current bookings</p>
   <% else @my_bookings.each do |booking| %>
   <div class="dashboard-card">
     <div class="dashcard-body">
-    <p>  This Is a booking for seat <%= booking.seat_id %></p>
-      <p class="date-time">DATE, TIME</p>
-      <h4 class="movie-title">Movie title</h4>
+      <p class="date-time"><%= booking.session.showtime.strftime("%d %b %Y %R") %></p>
+      <!-- <p class="date-time"><%= booking.session.showtime.strftime("%R") %></p> -->
+      <h4 class="movie-title"><%= booking.session.movie.name %></h4>
+    <!-- <p>  This Is a booking for seat <%= booking.seat_id %></p> -->
       <div class="tickets-price-info">
         <div class="tickets-info">
           <i class="fas fa-ticket-alt dashicons"></i>
-          <h6 class="price">3</h6>
+          <h6 class="price"><%= @my_bookings.count %></h6>
         </div>
         <div class="price-info">
           <i class="fas fa-money-bill-alt dashicons"></i>
-          <h6 class="price">80kr</h6>
+          <h6 class="price"><%= booking.session.base_price %>kr</h6>
         </div>
       </div>
     </div>
+    <%= image_tag("QR.png", class: "QR") %>
+    <%= image_tag("ticket.png", class: "ticketback") %>
+
   </div>
     <% end %>
   <% end %>
 
-  <h2>History</h2>
+<div class="type-amount history">
+  <h3>History</h3>
+  <%= link_to "See all (#{@my_bookings.count})", dashboard_path, class: "link-dash" %>
+</div>
 <div class="dashboard-card">
     <div class="dashcard-body">
       <p class="date-time">DATE, TIME</p>
@@ -50,8 +58,17 @@
         </div>
       </div>
     </div>
+  <%= image_tag("ticket.png", class: "ticketback") %>
+
   </div>
 
 
   </div>
 </div>
+
+
+
+
+
+
+

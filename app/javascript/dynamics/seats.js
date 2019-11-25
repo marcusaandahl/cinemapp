@@ -10,6 +10,8 @@ $(document).ready(function(i){
 const displayPrice = () => {
   // get all the selected seats
   const selectedSeats = document.querySelectorAll('.seat-selected');
+  // const selectedSpan = document.querySelector('#selected-seats');
+  // selectedSpan.innerHTML = selectedSeats.count;
   // for each sum the base prices
   // and sum the discounted prices
   let baseSum = 0;

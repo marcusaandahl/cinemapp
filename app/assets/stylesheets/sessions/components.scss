@@ -1,11 +1,23 @@
 .session-show {
   margin: unset;
   margin-top: 10px;
+  width: 100%;
   h2 {
     color: white;
     font-family: Work Sans;
     font-size: 24px;
   }
+
+  h3 {
+    color: $lightgrey;
+    font-family: Work Sans;
+    font-size: 18px;
+  }
+}
+
+.date-and-time {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .seat-selected {
@@ -46,9 +58,9 @@
   margin: unset;
 }
 
-.booking-button {
-  display: flex;
+.back-button {
   width: 100%;
+  margin: unset;
 }
 
 .screen {
