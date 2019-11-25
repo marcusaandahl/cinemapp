@@ -19,7 +19,7 @@
       <div class="card-seat">
         <% key = seat.id %>
           <label for="<%= key %>">
-            <div class="card seat" data-price="<%= @session.base_price %>" data-discountprice="<%= @session.base_price %>+algorithm" data-name="<%= seat.name %>" data-booked="<%= seat.booked == true ? true : false %>" id="seat-<%= seat.id %>" >
+            <div class="card seat" data-price="<%= @session.base_price %>" data-discountprice="<%= @session.base_price %>" data-name="<%= seat.name %>" data-booked="<%= seat.booked == true ? true : false %>" id="seat-<%= seat.id %>" >
                 <p class="card-title" ><%= seat.name %></p>
             </div>
           </label>
@@ -43,19 +43,24 @@
     <p>You have no selected seats</p>
   </div>
 </div>
-  <div class="row">
-    <div class="booking-button">
+
+  <div class="book-card">
+    <div class="card-info">
+      <p class="amount_tickets"> tickets</p>
+      <p><span id="original-price"></span></p>
+      <p>YOU PAY: <span id="discounted-price"></span></p>
+    </div>
+    <div class="button-area">
       <%= f.submit "Book seats", class: "btn red-button" %>
     <% end %>
+
     </div>
   </div>
-  <p>
     <!-- MARGIN NEEDS TO BE ADDED -->
-  </p>
-  <div class="row">
-    <div class="booking-button">
-      <%= link_to "Go Back", movie_sessions_path(@movie), class: "btn red-button" %>
-    </div>
+    <br>
+
+  <div class="booking-button">
+    <%= link_to "Go Back", movie_sessions_path(@movie), class: "btn grey-button" %>
   </div>
 
 </div>

@@ -5,4 +5,4 @@ class Session < ApplicationRecord
 
   validates :showtime, presence: true
   validates :base_price, presence: true
-end
+ end

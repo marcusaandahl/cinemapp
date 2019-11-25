@@ -48,10 +48,7 @@
 
 .booking-button {
   display: flex;
-  width: 40%;
-  .red-button {
-    width: 100%;
-  }
+  width: 100%;
 }
 
 .screen {
@@ -67,4 +64,15 @@
     font-size: 12px;
     opacity: 1;
   }
+}
+
+#original-price {
+  opacity: 0.5;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+#discounted-price {
+  font-size: 14px;
+  color: $red;
 }
