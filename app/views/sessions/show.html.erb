@@ -4,6 +4,8 @@
     <div>
       <h3><%= @session.room.cinema.name %></h3>
     </div>
+    <div style="width: 10px">
+    </div>
     <div>
       <h3><%= @session.showtime.strftime("%d/%m %I:%M%p") %></h3>
     </div>
@@ -52,6 +54,10 @@
   </div>
 </div>
 
+  <div class="saving">
+    <h1><span id="saving-span"></span></h1>
+  </div>
+
   <div class="book-card">
     <div class="card-info">
       <p class="amount_tickets"><span id="selected-span"></span> tickets</p>
@@ -61,15 +67,11 @@
     <div class="button-area">
       <%= f.submit "Book", class: "btn red-button" %>
     <% end %>
-
     </div>
   </div>
 
-  <div class="saving">
-    <h1><span id="saving-span"></span></h1>
-  </div>
     <!-- MARGIN NEEDS TO BE ADDED -->
-    <br>
+    <div style="height:10px"></div>
   <div class="back-button">
     <%= link_to "Go Back", movie_sessions_path(@movie), class: "btn grey-button" %>
   </div>
