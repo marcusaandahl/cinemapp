@@ -169,6 +169,8 @@ cinemas.each do |cinema|
           row: row,
           column: column,
           room: room,
+          booked:[true, false, true, true, true].sample
+          # booked:false
           )
       end
     end
@@ -177,40 +179,75 @@ end
 
 puts 'Creating a session'
 sesh = Session.new(
-  room_id: Cinema.first.rooms.first.id,
-  movie_id: terminator.id,
-  showtime: DateTime.now(),
-  base_price: 20
+  room: Cinema.last.rooms.second,
+  movie: joker,
+  showtime: DateTime.now + 24.hours,
+  base_price: 160,
+  max_discount: 40,
+  min_empty_seats:40, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  hours_for_discount:24,
 )
 sesh.save!
+
 sesh = Session.new(
-  room_id: Cinema.last.rooms.second.id,
-  movie_id: terminator.id,
+  room: Cinema.second.rooms.first,
+  movie: joker,
+  showtime: DateTime.now + 36.hours,
+  base_price: 160,
+  max_discount: 40,
+  min_empty_seats:40, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  hours_for_discount:24,
+)
+sesh.save!
+
+sesh = Session.new(
+  room: Cinema.first.rooms.first,
+  movie: terminator,
   showtime: DateTime.now + 12.hours,
-  base_price: 20
+  base_price: 160,
+  max_discount: 40,
+  min_empty_seats:40, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  hours_for_discount:24,
 )
 sesh.save!
-
-sesh = Session.new(
-  room_id: Cinema.second.rooms.first.id,
-  movie_id: terminator.id,
-  showtime: DateTime.now(),
-  base_price: 20
-)
-sesh.save!
+sessions = Session.all
 
 
 
 
-
-########  BOokings
+########  Bookings
 
 puts 'creating a booking'
 
 booking1 = Booking.new(
   user: henderson,
-  session: sesh,
-  # seat:seat,
+  session: sessions[1],
+  seat:Seat.first,
   discounted_price:80,
   )
-booking1.save
+booking1.save!
+
+booking2 = Booking.new(
+  user: henderson,
+  session: sessions[1],
+  seat:Seat.last,
+  discounted_price:80,
+  )
+booking2.save!
+
+
+booking3 = Booking.new(
+  user: henderson,
+  session: sessions[0],
+  seat:Seat.second,
+  discounted_price:80,
+  )
+booking3.save!
+
+booking4 = Booking.new(
+  user: henderson,
+  session: sessions[2],
+  seat:Seat.third,
+  discounted_price:80,
+  )
+booking4.save!
