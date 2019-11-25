@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :movies, only: [:index, :show] do
     resources :sessions, only: [:index, :show] do
-      resources :bookings, only: [:create]
+      resources :orders, only: [:create]
     end
   end
 
