@@ -19,7 +19,7 @@ class Session < ApplicationRecord
     discounted_price(base_price, max_discount, room.seats.where(booked:false).count, room.seats.count, weekend, time_diff, min_empty_seats, hours_for_discount)
   end
 
-  private
+private
 
   def discounted_price(price, max_discount, seats_available, total_seats, weekend, diff_time, min_empty_seats, hours_for_discount)
     converted_discount = max_discount.fdiv(100)
