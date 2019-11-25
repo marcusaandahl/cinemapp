@@ -1,10 +1,11 @@
 
 .dashboard-card {
-  margin: 20px;
-  background-size: cover;
+  z-index:0;
+  position:relative;
+  width:95%;
+  margin-top:10px;
+  margin-left: 10px;
   background-color: $lightgrey;
-  background-position: center;
-  height: 117px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -14,6 +15,10 @@
   border-radius: 12px;
   box-shadow: 0 10px 10px -9px black;
   padding: 20px;
+}
+
+.dashcard-body{
+  z-index:2;
 }
 
 .card-date-time {
@@ -28,7 +33,7 @@
 }
 
 .dashcard-body > h4 {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .movie-title {
@@ -36,29 +41,138 @@
   font-weight: 500;
 }
 
-.price h6 {
+h6 {
   font-family: Work Sans;
   font-weight: 500;
+  font-size:24px;
+  margin-left:5px;
 }
 
 .date-time {
+  margin-left: 20px;
   font-family: Work Sans;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 18px;
+  text-decoration: overline;
 }
-// li {
-//   list-style-type: none;
-//   margin-right: 5px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: flex-end;
-//   align: center;
-// }
 
-// ul {
-//   padding-left: 0px;
-//   font-family: Work Sans;
-//   font-weight: 600;
-//   font-size: 12px;
-//   margin-bottom: 5px;
+.tickets-price-info{
+    .dashicons{
+      margin-top: 5px;
+      font-size: 20px;
+      margin-right:5px;
+      color: white;
+    }
+      display:flex;
+      .tickets-info{
+        display:flex;
+        margin-right:50px;
+      }
+      .price-info{
+        display:flex;
+      }
+    }
+
+.QR {
+    position: relative;
+    z-index: 2;
+    top: -7px;
+    right: -9px;
+    width: 28%;
+}
+
+  // .ticketback {
+  //   position:absolute;
+  //   z-index:1;
+  //   top:-174px;
+  //   left:-152px;
+  //   width:190%;
+  // }
+
+.ticketback {
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    left: -2px;
+    width: 101%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .dashboard-history-card {
+// // position:relative;
+//   z-index:0;
+//   // background-image: url(ticket.png);
+//   // background-position: center;
+//   // background-size: 100%;
+//   // background-repeat: no-repeat;
+//   width:95%;
+//   height: 166px;
+//   margin:auto;
+//   // margin-top:10px;
+//   // margin-left: 20px;
+//   background-color: $lightgrey;
+//   // display: flex;
+//   // flex-direction: row;
+//   // align-items: center;
+//   // color: white;
+//   // font-size: 24px;
+//   // font-weight: bold;
+//   border-radius: 12px;
+//   box-shadow: 0 10px 10px -9px black;
+//   // padding: 20px;
+
+//   // .dashcard-body{
+//   // position:absolute;
+//   //   z-index:2;
+
+
+//   // }
+// //   .ticketimage{
+// //       position:absolute;
+
+// //     z-index:1;
+// //     position:relative;
+// //     top:-150px;
+// //     left: -115px;
+// //     width:170%;
+
+
+// // // ticketimage {
+// // //     position: relative;
+// // //     top: -155px;
+// // //     left: -128px;
+// // //     width: 176%;
+// // //     z-index: 0;
+// // // }
+// //   }
 // }

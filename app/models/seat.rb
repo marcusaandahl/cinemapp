@@ -8,6 +8,7 @@ class Seat < ApplicationRecord
   # scope row + column + roomid
 
   def name
-    "R#{row}-C#{column}"
+    letters = ('A'..'Z').to_a
+    "#{letters[row]}#{column + 1}"
   end
 end

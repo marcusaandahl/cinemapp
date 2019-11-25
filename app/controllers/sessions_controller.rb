@@ -14,6 +14,10 @@ class SessionsController < ApplicationController
     @seats = @room.seats
   end
 
+  # def showtime
+  #   @showtime = session.showtime.strptime(dt, '%m/%d/%Y %H:%M')
+  # end
+
   private
 
   def strong_params

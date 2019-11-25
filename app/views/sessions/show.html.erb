@@ -1,38 +1,78 @@
-<h2><%= @movie.name %></h2>
-
-
-<!-- PRESS BUTTON TO CREATE BOOKING WITH SELECTED SEATS -->
-<%#= button_to 'Book', movie_session_bookings_path(@movie, @session), action: :create, class: "btn btn-primary" %>
-<!-- make this a form (simple_form) -->
-<!-- make the below items inputs -->
-<%= link_to "Go Back", movie_sessions_path(@movie), class: "btn btn-primary" %>
-
-<%= form_with url: movie_session_bookings_path(@movie, @session), :html => { :id => 'bookings_form' }, method: :post, local: true do |f| %>
-  <%#= select :booking, :seat_id, @room.seats.map{|s| [s.name, s.id]}, {} %>
-  <%= f.submit "Book Selection", class: "btn btn-primary" %>
-  <p></p>
-
-  <div class="row" style="width: 100%">
-    <div class="card-columns" style="width: 100%" >
-      <% @room.seats.each do |seat| %>
-          <% key = seat.id %>
-            <label for="<%= key %>">
-              <div class="card seat" data-booked="<%= seat.booked == true ? true : false %>" id="seat-<%= seat.id %>" style="width: 8rem;">
-                <div class="card-body">
-                  <p class="card-title" ><%= seat.name %></p>
-                </div>
-              </div>
-            </label>
-
-          <input type="checkbox"
-                 name="seat_ids[]"
-                 id="<%= key %>"
-                 value="<%= key %>"
-                 data-type="input"
-                 false
-                 hidden
-          >
-      <% end %>
+<div class="container session-show">
+  <h2><%= @movie.name %></h2>
+  <div class="row date-and-time">
+    <div>
+      <h3><%= @session.room.cinema.name %></h3>
+    </div>
+    <div>
+      <h3><%= @session.showtime.strftime("%d/%m %I:%M%p") %></h3>
     </div>
   </div>
-<% end %>
+  <div style="height:10px"></div>
+
+
+  <!-- PRESS BUTTON TO CREATE BOOKING WITH SELECTED SEATS -->
+  <%#= button_to 'Book', movie_session_bookings_path(@movie, @session), action: :create, class: "btn btn-primary" %>
+  <!-- make this a form (simple_form) -->
+  <!-- make the below items inputs -->
+
+
+  <%= form_with url: movie_session_bookings_path(@movie, @session), :html => { :id => 'bookings_form' }, method: :post, local: true do |f| %>
+  <%#= select :booking, :seat_id, @room.seats.map{|s| [s.name, s.id]}, {} %>
+  <div class="screen">
+    <h3>Screen</h3>
+  </div>
+  <div class="seats" style="width: 100%">
+    <% @room.seats.order(row: :asc, column: :asc).each do |seat| %>
+      <div class="card-seat">
+        <% key = seat.id %>
+          <label for="<%= key %>">
+            <div class="card seat" data-price="<%= @session.base_price %>" data-discountprice="<%= @session.current_discounted_price %>" data-name="<%= seat.name %>" data-booked="<%= seat.booked == true ? true : false %>" id="seat-<%= seat.id %>" >
+                <p class="card-title" ><%= seat.name %></p>
+            </div>
+          </label>
+
+        <input type="checkbox"
+               name="seat_ids[]"
+               id="<%= key %>"
+               value="<%= key %>"
+               data-type="input"
+               false
+               hidden
+        >
+      </div>
+    <% end %>
+  </div>
+  <div style="height:10px"></div>
+
+<div class="selected-seats">
+  <h2>Your selected seats:</h2>
+  <div id="bookings-list">
+    <p>You have no selected seats</p>
+  </div>
+</div>
+
+  <div class="book-card">
+    <div class="card-info">
+      <p class="amount_tickets"><span id="selected-span"></span> tickets</p>
+      <p><span id="original-price"></span></p>
+      <p><i class="fas fa-tags"></i> <span id="discounted-price"></span></p>
+    </div>
+    <div class="button-area">
+      <%= f.submit "Book", class: "btn red-button" %>
+    <% end %>
+
+    </div>
+  </div>
+
+  <div class="saving">
+    <h1><span id="saving-span"></span></h1>
+  </div>
+    <!-- MARGIN NEEDS TO BE ADDED -->
+    <br>
+  <div class="back-button">
+    <%= link_to "Go Back", movie_sessions_path(@movie), class: "btn grey-button" %>
+  </div>
+
+
+</div>
