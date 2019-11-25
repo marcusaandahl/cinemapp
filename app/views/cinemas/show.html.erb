@@ -1,3 +1,31 @@
+
+<div class="container sessions-index">
+<h2><%= @cinema.name %></h2>
+<p><%= @cinema.address %></p>
+<div class="img-container">
+<%= cl_image_tag(@cinema.image) %>
+</div>
+<h2>Upcoming sessions:</h2>
+<% if @cinema.rooms.empty? %>
+  <p>Sorry, there are no sessions available at this cinema</p>
+  <% else %>
+    <% @cinema.movies.each do |movie| %>
+      <div class="movie-sessions">
+          <h3><%= movie.name %></h3>
+          <h4>Next sessions:</h4>
+          <% @cinema.sessions.where(movie: movie).each do |session| %>
+            <%= link_to "#{session.showtime.strftime("%I:%M%p")}", movie_session_path(movie, session), class: "btn red-button" %>
+          <% end %>
+      </div>
+      <div style="height:10px"></div>
+   <% end %>
+ <% end %>
+
+<div style="height:10px"></div>
+
+<%= link_to "Go back to cinemas", cinemas_path, class: "btn grey-button" %>
+</div>
+
 <div
   id="map"
   style="width: 100%;
@@ -5,3 +33,4 @@
   data-markers="<%= @marker.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
+

@@ -6,17 +6,23 @@
 <h2>Upcoming sessions:</h2>
 <% if @movie.sessions.empty? %>
   <p>Sorry, there are no sessions available for this film</p>
-  <% else @movie.sessions.each do |session| %>
-      <div class="movie-sessions">
-          <h3><%= session.room.cinema.name %></h3>
+  <% else %>
+    <% @movie.cinemas.each do |cinema| %>
+      <h3><%= cinema.name %></h3>
           <h4>Next sessions:</h4>
+      <% @movie.sessions.joins(:room).where(rooms: { cinema_id: cinema.id }).each do |session| %>
+      <div class="movie-sessions">
+          <%# @movies.where(cinema: cinema).each do |session| %>
+            <%#= link_to "#{session.showtime.strftime("%I:%M%p")}", movie_session_path(@movie, session), class: "btn red-button" %>
+          <%# end %>
           <%= link_to "#{session.showtime.strftime("%I:%M%p")}", movie_session_path(@movie, session), class: "btn red-button" %>
       </div>
       <div style="height:10px"></div>
+      <% end %>
   <% end %>
  <% end %>
 
 <div style="height:10px"></div>
 
-<%= link_to "Go back to movie", movie_path(@movie), class: "btn grey-button" %>
+<%= link_to "Go back to search", movies_path, class: "btn grey-button" %>
 </div>
