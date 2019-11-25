@@ -15,6 +15,7 @@ Room.destroy_all
 Seat.destroy_all
 Session.destroy_all
 Booking.destroy_all
+Order.destroy_all
 
 
 puts 'Creating users'
@@ -213,14 +214,26 @@ sesh.save!
 sessions = Session.all
 
 
+########  Orders
 
+puts 'creates an order'
+
+order1 = Order.new(
+  user: henderson
+  )
+order1.save!
+
+order2 = Order.new(
+  user:marcus
+  )
+order2.save!
 
 ########  Bookings
 
 puts 'creating a booking'
 
 booking1 = Booking.new(
-  user: henderson,
+  order: order1,
   session: sessions[1],
   seat:Seat.first,
   discounted_price:80,
@@ -228,7 +241,7 @@ booking1 = Booking.new(
 booking1.save!
 
 booking2 = Booking.new(
-  user: henderson,
+  order: order2,
   session: sessions[1],
   seat:Seat.last,
   discounted_price:80,
@@ -237,7 +250,7 @@ booking2.save!
 
 
 booking3 = Booking.new(
-  user: henderson,
+  order: order1,
   session: sessions[0],
   seat:Seat.second,
   discounted_price:80,
@@ -245,9 +258,10 @@ booking3 = Booking.new(
 booking3.save!
 
 booking4 = Booking.new(
-  user: henderson,
+  order: order1,
   session: sessions[2],
   seat:Seat.third,
   discounted_price:80,
   )
 booking4.save!
+
