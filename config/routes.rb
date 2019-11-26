@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get "/components", to: "pages#components"
   get '/dashboard', to: 'dashboards#dashboard', as: :dashboard
+  get "/active", to: "dashboards#active", as: :active
+  get "/history", to: "dashboards#history", as: :history
 
   devise_for :users
 

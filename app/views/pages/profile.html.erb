@@ -1,2 +1,37 @@
-<%= link_to "Log out", destroy_user_session_path, :method => 'delete', class: "link-dash" %>
-<h2>Profile PAGE</h2>
+<div class="outter-container">
+  <div>
+    <%= link_to root_path do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  </div>
+<div class="profile-container">
+    <h2>Profile</h2>
+</div>
+  <div class="info-container">
+    <div class="type-amount">
+      <h3>Payment Option</h3>
+    </div>
+
+
+
+    <div class="type-amount history">
+      <h3>Update Account</h3>
+    </div>
+      <div class="dashboard-card">
+        <div class="dashcard-body">
+          <p class="date-time">sdsd</p>
+          <h4 class="movie-title">sdsd</h4>
+          <div class="tickets-price-info">
+            <div class="tickets-info">
+              <i class="fas fa-ticket-alt dashicons"></i>
+              <h6 class="price">sdsd</h6>
+            </div>
+            <div class="price-info">
+              <i class="fas fa-money-bill-alt dashicons"></i>
+              <h6 class="price">as</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

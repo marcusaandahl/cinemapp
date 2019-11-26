@@ -1,0 +1,43 @@
+
+
+<div class="outter-container">
+  <div>
+    <%= link_to dashboard_path do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  </div>
+
+  <div class="dashboard-container">
+    <h2>Tickets</h2>
+    <div class="type-amount">
+      <h3>Active</h3>
+    </div>
+    <% if @active_user_sessions.empty? %>
+      <p>You have no current bookings</p>
+    <% else %>
+      <% @active_user_sessions.each do |session| %>
+        <p>Session <%= session.id %></p>
+        <% session.bookings.each do |booking| %>
+          <div class="dashboard-card">
+            <div class="dashcard-body">
+              <p class="date-time"><%= booking.session.showtime.strftime("%d %b %Y %R") %></p>
+              <h4 class="movie-title"><%= booking.session.movie.name %></h4>
+              <div class="tickets-price-info">
+                <div class="tickets-info">
+                  <i class="fas fa-ticket-alt dashicons"></i>
+                  <h6 class="price"><%= session.bookings.count %></h6>
+                </div>
+                <div class="price-info">
+                  <i class="fas fa-money-bill-alt dashicons"></i>
+                  <h6 class="price"><%= booking.session.base_price %>kr</h6>
+                </div>
+              </div>
+            </div>
+            <%= image_tag("QR.png", class: "QR") %>
+            <%= image_tag("ticket.png", class: "ticketback") %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
