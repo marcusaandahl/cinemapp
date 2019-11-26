@@ -8,7 +8,7 @@ class Order < ApplicationRecord
 
   def price_update
     bookings_amount = bookings.count
-    discount_price = bookings.first.session.current_discounted_price
+    discount_price = bookings.first.session.current_discounted_price[0]
     return bookings_amount * discount_price.to_i
   end
 end
