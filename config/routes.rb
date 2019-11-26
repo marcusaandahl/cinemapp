@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+
   # GO DIRECTLY TO SESSIONS (SKIP MOVIES/CINEMAS)
 
   resources :movies, only: [:index, :show] do
@@ -16,9 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :orders, only: :show do
-    resources :payments, only: :new
-  end
+  resources :orders, only: :show
 
   resources :cinemas, only: [:index, :show] do
     get "/map", to: "cinemas#map", as: :map

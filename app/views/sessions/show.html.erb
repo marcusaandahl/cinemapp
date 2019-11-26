@@ -29,7 +29,7 @@
       <div class="card-seat">
         <% key = seat.id %>
           <label for="<%= key %>">
-            <div class="card seat" data-price="<%= @session.base_price %>" data-discountprice="<%= @session.current_discounted_price %>" data-name="<%= seat.name %>" data-booked="<%= seat.booked == true ? true : false %>" id="seat-<%= seat.id %>" >
+            <div class="card seat" data-price="<%= @session.base_price %>" data-discountprice="<%= @session.current_discounted_price[0] %>" data-name="<%= seat.name %>" data-booked="<%= seat.booked == true ? true : false %>" id="seat-<%= seat.id %>" >
                 <p class="card-title" ><%= seat.name %></p>
             </div>
           </label>

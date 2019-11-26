@@ -5,11 +5,10 @@ class OrdersController < ApplicationController
   def create
     # redirect to a cart
     if !strong_params[:seat_ids].nil?
-      order = Order.create(user_id: current_user.id, state: "pending", price: 0)
+      order = Order.create(user_id: current_user.id)
       strong_params[:seat_ids].each do |seat_id|
         booking = Booking.new(order_id: order.id, session_id: strong_params[:session_id], discounted_price: 10, integer: 1, seat_id: seat_id)
         booking.save
-        Seat.find(seat_id).update_attribute(:booked, true)
       end
       order.update(price: order.price_update)
 
