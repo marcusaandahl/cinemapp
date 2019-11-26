@@ -1,3 +1,5 @@
+
+
 <div class="outter-container">
   <div>
     <%= link_to root_path do %>
@@ -6,69 +8,73 @@
   </div>
 
   <div class="dashboard-container">
-  <h2>Tickets</h2>
-<div class="type-amount">
-  <h3>Active</h3>
-  <%= link_to "See all (#{@my_bookings.count})", dashboard_path, class: "link-dash" %>
-</div>
-
-  <% if @my_bookings.empty? %>
-    <p>You have no current bookings</p>
-  <% else @my_bookings.each do |booking| %>
-  <div class="dashboard-card">
-    <div class="dashcard-body">
-      <p class="date-time"><%= booking.session.showtime.strftime("%d %b %Y %R") %></p>
-      <!-- <p class="date-time"><%= booking.session.showtime.strftime("%R") %></p> -->
-      <h4 class="movie-title"><%= booking.session.movie.name %></h4>
-    <!-- <p>  This Is a booking for seat <%= booking.seat_id %></p> -->
-      <div class="tickets-price-info">
-        <div class="tickets-info">
-          <i class="fas fa-ticket-alt dashicons"></i>
-          <h6 class="price"><%= @my_bookings.count %></h6>
-        </div>
-        <div class="price-info">
-          <i class="fas fa-money-bill-alt dashicons"></i>
-          <h6 class="price"><%= booking.session.base_price %>kr</h6>
-        </div>
-      </div>
+    <h2>Tickets</h2>
+    <div class="type-amount">
+      <h3>Active</h3>
+      <%= link_to "See all (#{@user_sessions.count.count})", dashboard_path, class: "link-dash" %>
     </div>
-    <%= image_tag("QR.png", class: "QR") %>
-    <%= image_tag("ticket.png", class: "ticketback") %>
-
-  </div>
+    <% if @active_user_sessions.empty? %>
+      <p>You have no current bookings</p>
+    <% else %>
+      <% @active_user_sessions.each do |session| %>
+        <p>Session <%= session.id %></p>
+        <% session.bookings.where(user: current_user).each do |booking| %>
+          <div class="dashboard-card">
+            <div class="dashcard-body">
+              <p class="date-time"><%= booking.session.showtime.strftime("%d %b %Y %R") %></p>
+              <h4 class="movie-title"><%= booking.session.movie.name %></h4>
+              <div class="tickets-price-info">
+                <div class="tickets-info">
+                  <i class="fas fa-ticket-alt dashicons"></i>
+                  <h6 class="price"><%= session.bookings.count %></h6>
+                </div>
+                <div class="price-info">
+                  <i class="fas fa-money-bill-alt dashicons"></i>
+                  <h6 class="price"><%= booking.session.base_price %>kr</h6>
+                </div>
+              </div>
+              <%= link_to "See all tickets (#{session.bookings.where(user:current_user).count})", dashboard_path, class: "link-dash" %>
+            </div>
+            <%= image_tag("QR.png", class: "QR") %>
+            <%= image_tag("ticket.png", class: "ticketback") %>
+          </div>
+        <% end %>
+      <% end %>
     <% end %>
-  <% end %>
 
-<div class="type-amount history">
-  <h3>History</h3>
-  <%= link_to "See all (#{@my_bookings.count})", dashboard_path, class: "link-dash" %>
-</div>
-<div class="dashboard-card">
-    <div class="dashcard-body">
-      <p class="date-time">DATE, TIME</p>
-      <h4 class="movie-title">Movie title</h4>
-      <div class="tickets-price-info">
-        <div class="tickets-info">
-          <i class="fas fa-ticket-alt dashicons"></i>
-          <h6 class="price">3</h6>
-        </div>
-        <div class="price-info">
-          <i class="fas fa-money-bill-alt dashicons"></i>
-          <h6 class="price">80kr</h6>
-        </div>
-      </div>
+
+
+    <div class="type-amount history">
+      <h3>History</h3>
+      <%= link_to "See all (#{@past_sessions.count.count})", dashboard_path, class: "link-dash" %>
     </div>
-  <%= image_tag("ticket.png", class: "ticketback") %>
-
-  </div>
-
-
+      <% if @past_sessions.empty? %>
+        <p>You have no past bookings</p>
+      <% else %>
+        <% @past_sessions.each do |session| %>
+          <p>Session <%= session.id %></p>
+          <% session.bookings.where(user: current_user).each do |booking| %>
+            <div class="dashboard-card">
+              <div class="dashcard-body">
+                <p class="date-time"><%= booking.session.showtime.strftime("%d %b %Y %R") %></p>
+                <h4 class="movie-title"><%= booking.session.movie.name %></h4>
+                <div class="tickets-price-info">
+                  <div class="tickets-info">
+                    <i class="fas fa-ticket-alt dashicons"></i>
+                    <h6 class="price"><%= session.bookings.count %></h6>
+                  </div>
+                  <div class="price-info">
+                    <i class="fas fa-money-bill-alt dashicons"></i>
+                    <h6 class="price"><%= booking.session.base_price %>kr</h6>
+                  </div>
+                </div>
+                <%= link_to "See all tickets (#{session.bookings.where(user:current_user).count})", dashboard_path, class: "link-dash" %>
+              </div>
+              <%= image_tag("QR.png", class: "QR") %>
+              <%= image_tag("ticket.png", class: "ticketback") %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
   </div>
 </div>
-
-
-
-
-
-
-

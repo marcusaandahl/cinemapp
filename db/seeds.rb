@@ -245,7 +245,7 @@ booking1 = Booking.new(
 booking1.save!
 
 booking2 = Booking.new(
-  order: order2,
+  order: order1,
   session: sessions[1],
   seat:Seat.last,
   discounted_price:80,
@@ -269,5 +269,5 @@ booking4 = Booking.new(
   )
 booking4.save!
 
-order1.update(price: order1.price_update)
-order2.update(price: order2.price_update)
+# order1.update(price: order1.price_update)
+# order2.update(price: order2.price_update)
