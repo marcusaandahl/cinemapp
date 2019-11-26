@@ -36,6 +36,7 @@ private
 
     weekend ? (discounted_price += (price - discounted_price).fdiv(5)) : discounted_price
     (diff_time >= hours_for_discount) ? (p "Since there is more than #{hours_for_discount} hours #{discounted_price}") : (p "Since there is less than #{hours_for_discount} hours #{(discounted_price -= (discounted_price - min_price).fdiv(5))}")
-    return discounted_price.ceil
+    saved_percentage = 100 -((discounted_price.fdiv(base_price))*100)
+    return [discounted_price.ceil, saved_percentage.round(2)]
   end
 end
