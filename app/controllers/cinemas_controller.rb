@@ -13,8 +13,11 @@ class CinemasController < ApplicationController
     end
 
     def show
-
       @cinema = Cinema.find(params[:id])
+    end
+
+    def map
+      @cinema = Cinema.find(params[:cinema_id])
       @marker =
         [{
           lat: @cinema.latitude,
