@@ -38,17 +38,18 @@
           <h2><%= cinema.name %></h2>
           <h3><%= cinema.address %></h3>
           <p id="darker">Copenhagen</p>
-          <div class="row cinema-links">
+             <div class="row cinema-links">
             <div>
               <%= link_to cinema_path(cinema), class: 'browse-link' do %>
                 <i class="fas fa-calendar-alt"></i> Sessions
               <% end %>
             </div>
+            <div style="width: 10px;"></div>
             <div>
               <%= link_to cinema_map_path(cinema), class: 'browse-link' do %>
                 <i class="fas fa-map-marker-alt"></i> Map
               <% end %>
-             </div>
+            </div>
           </div>
         </div>
       </div>
