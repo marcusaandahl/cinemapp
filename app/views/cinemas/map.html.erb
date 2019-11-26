@@ -1,7 +1,14 @@
-<div
+<div>
+  <div
   id="map"
   style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
+  height: 766px;"
+  data-markers="<%= @marker.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
+
+          <%= link_to cinemas_path do %>
+            <i class="fas fa-arrow-left"></i>
+          <% end %>
+
+</div>
