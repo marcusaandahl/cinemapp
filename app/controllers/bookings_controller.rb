@@ -12,7 +12,6 @@ class BookingsController < ApplicationController
       strong_params[:seat_ids].each do |seat_id|
         booking = Booking.new(order_id: order.id, session_id: strong_params[:session_id], integer: 1, seat_id: seat_id)
         booking.save
-        Seat.find(seat_id).update_attribute(:booked, true)
       end
       redirect_to movie_session_path(Movie.find(strong_params[:movie_id]), Session.find(strong_params[:session_id]))
     else
