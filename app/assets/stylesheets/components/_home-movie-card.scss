@@ -16,6 +16,26 @@
   padding: 0 10px;
 }
 
+.discount-highlight {
+  // transform: rotate(90deg);
+  height: 50px;
+  width: 100px;
+  background-color: $turquoise;
+  position: absolute;
+  opacity: 0.95;
+  border-radius: 5%;
+  box-shadow:0 0 10px rgba(255, 255, 255, 0.5);
+  left: 0px;
+  top: 15px;
+  text-align: center;
+  .discount {
+    margin-top: 15px;
+    color: white;
+    font-weight: bold;
+    opacity: 1;
+  }
+}
+
 .poster-content {
   margin: 0 10px;
   position: absolute;
