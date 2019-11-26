@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 2019_11_25_184939) do
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "session_id"
-    t.string "discounted_price"
-    t.string "integer"
+    t.string "discounted_price" #DELETE THIS FIELD
+    t.string "integer" #DELETE THIS FIELD
     t.bigint "seat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

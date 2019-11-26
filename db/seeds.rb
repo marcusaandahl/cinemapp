@@ -211,6 +211,17 @@ sesh = Session.new(
   hours_for_discount:24,
 )
 sesh.save!
+
+sesh = Session.new(
+  room: Cinema.first.rooms.first,
+  movie: lion_king,
+  showtime: DateTime.now - 24.hours,
+  base_price: 160,
+  max_discount: 40,
+  min_empty_seats:40, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  hours_for_discount:24,
+)
+sesh.save!
 sessions = Session.all
 
 
@@ -269,5 +280,21 @@ booking4 = Booking.new(
   )
 booking4.save!
 
+
+booking5 = Booking.new(
+  order: order1,
+  session: sessions[3],
+  seat:Seat.third,
+  discounted_price:80,
+  )
+booking5.save!
+
+booking6 = Booking.new(
+  order: order2,
+  session: sessions[2],
+  seat:Seat.last,
+  discounted_price:80,
+  )
+booking6.save!
 # order1.update(price: order1.price_update)
 # order2.update(price: order2.price_update)
