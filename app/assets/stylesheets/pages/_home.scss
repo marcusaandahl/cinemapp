@@ -1,1 +1,19 @@
 // Specific CSS for your home-page
+.home {
+  width: 100%;
+  margin-bottom: 100px;
+  .logo-home {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    img {
+      width: 70%;
+    }
+  }
+  h2 {
+    font-family: work sans;
+    font-size: 18px;
+    color: $lightergrey;
+  }
+}
+

@@ -2,7 +2,6 @@ class CinemasController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
     def index
-      @geocinemas = Cinema.geocoded
 
       if params[:query].present?
         sql_query = "name ILIKE :query OR address ILIKE :query"
@@ -13,8 +12,11 @@ class CinemasController < ApplicationController
     end
 
     def show
-
       @cinema = Cinema.find(params[:id])
+    end
+
+    def map
+      @cinema = Cinema.find(params[:cinema_id])
       @marker =
         [{
           lat: @cinema.latitude,
