@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
         payment_method_types: ['card'],
         line_items: [{
           name: order.id,
-          images: [order.bookings.first.session.movie.image],
+          images: [Cloudinary::Utils.cloudinary_url(order.bookings.first.session.movie.image)],
           amount: order.price_cents,
           currency: 'dkk',
           quantity: 1
