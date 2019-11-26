@@ -194,7 +194,7 @@ sesh = Session.new(
   room: Cinema.second.rooms.first,
   movie: joker,
   showtime: DateTime.now + 36.hours,
-  base_price: 160,
+  base_price: 180,
   max_discount: 40,
   min_empty_seats:40, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
   hours_for_discount:24,
@@ -205,7 +205,7 @@ sesh = Session.new(
   room: Cinema.first.rooms.first,
   movie: terminator,
   showtime: DateTime.now + 12.hours,
-  base_price: 160,
+  base_price: 120,
   max_discount: 40,
   min_empty_seats:40, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
   hours_for_discount:24,
@@ -251,7 +251,6 @@ booking1 = Booking.new(
   order: order1,
   session: sessions[1],
   seat:Seat.first,
-  discounted_price:80,
   )
 booking1.save!
 
@@ -259,7 +258,6 @@ booking2 = Booking.new(
   order: order1,
   session: sessions[1],
   seat:Seat.last,
-  discounted_price:80,
   )
 booking2.save!
 
@@ -268,7 +266,6 @@ booking3 = Booking.new(
   order: order1,
   session: sessions[0],
   seat:Seat.second,
-  discounted_price:80,
   )
 booking3.save!
 
@@ -276,7 +273,6 @@ booking4 = Booking.new(
   order: order1,
   session: sessions[2],
   seat:Seat.third,
-  discounted_price:80,
   )
 booking4.save!
 
