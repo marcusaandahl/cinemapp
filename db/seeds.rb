@@ -278,7 +278,6 @@ booking5 = Booking.new(
   order: order1,
   session: sessions[3],
   seat:Seat.third,
-  discounted_price:80,
   )
 booking5.save!
 
@@ -286,7 +285,6 @@ booking6 = Booking.new(
   order: order2,
   session: sessions[2],
   seat:Seat.last,
-  discounted_price:80,
   )
 booking6.save!
 order1.update(price: order1.price_update)
