@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   end
 
   resources :cinemas, only: [:index, :show] do
+    get "/map", to: "cinemas#map", as: :map
+
     resources :sessions, only: [:index, :show] do
       # resources :seats, only: [:index, :update]
       resources :bookings, only: [:create]

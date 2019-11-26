@@ -2,7 +2,6 @@ class CinemasController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
     def index
-      # @geocinemas = Cinema.geocoded
 
       if params[:query].present?
         sql_query = "name ILIKE :query OR address ILIKE :query"
@@ -13,14 +12,17 @@ class CinemasController < ApplicationController
     end
 
     def show
-
       @cinema = Cinema.find(params[:id])
-      # @marker =
-      #   [{
-      #     lat: @cinema.latitude,
-      #     lng: @cinema.longitude,
-      #     infoWindow: render_to_string(partial: "info_window", locals: { cinema: @cinema })
-      #   }]
+    end
+
+    def map
+      @cinema = Cinema.find(params[:cinema_id])
+      @marker =
+        [{
+          lat: @cinema.latitude,
+          lng: @cinema.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { cinema: @cinema })
+        }]
     end
 
     private
