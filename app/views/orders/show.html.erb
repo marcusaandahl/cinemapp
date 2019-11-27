@@ -48,6 +48,7 @@
     </div> -->
     <% if @order.state = "pending" %>
       <div class="buttonarea">
+
          <button id="pay" class="btn red-button payredbutton">Pay <%= humanized_money_with_symbol(@order.price) %></button>
 
         <script src="https://js.stripe.com/v3/"></script>
