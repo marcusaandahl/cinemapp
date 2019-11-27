@@ -1,37 +1,27 @@
-<div class="outter-container">
-  <div>
+<div class="container profile">
+  <div class="profile-header">
     <%= link_to root_path do %>
       <i class="fas fa-arrow-left"></i>
     <% end %>
+    <div class="user-name">
+      <h2><%= current_user.name %></h2>
+    </div>
+    <img class="avatar-bordered" src="https://pbs.twimg.com/profile_images/3377340707/a85f71ea118e7a9b1a0076a28986838c.jpeg" alt="The Cage">
   </div>
-<div class="profile-container">
-    <h2>Profile</h2>
-</div>
-  <div class="info-container">
-    <div class="type-amount">
-      <h3>Payment Option</h3>
-    </div>
 
-
-
-    <div class="type-amount history">
-      <h3>Update Account</h3>
-    </div>
-      <div class="dashboard-card">
-        <div class="dashcard-body">
-          <p class="date-time">sdsd</p>
-          <h4 class="movie-title">sdsd</h4>
-          <div class="tickets-price-info">
-            <div class="tickets-info">
-              <i class="fas fa-ticket-alt dashicons"></i>
-              <h6 class="price">sdsd</h6>
-            </div>
-            <div class="price-info">
-              <i class="fas fa-money-bill-alt dashicons"></i>
-              <h6 class="price">as</h6>
-            </div>
-          </div>
+  <div class="profile-content">
+    <h2>Payment option:</h2>
+    <%= image_tag("red.png", class: "credit-card") %>
+    <div style="height: 10px"></div>
+    <h2>Profile info:</h2>
+      <div class="profile-card">
+        <div class="profile-card-content">
+          <h2><%= current_user.name %></h2>
+          <h3><%= current_user.email %></h3>
         </div>
       </div>
+          <div class="edit-button">
+            <%= link_to "Edit profile", edit_user_registration_path, class: "btn red-button" %>
+          </div>
   </div>
 </div>
