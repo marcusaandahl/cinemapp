@@ -20,8 +20,13 @@
           <h3><%= current_user.email %></h3>
         </div>
       </div>
-          <div class="edit-button">
-            <%= link_to "Edit profile", edit_user_registration_path, class: "btn red-button" %>
-          </div>
+      <div class="row profile-buttons">
+        <div>
+          <%= link_to "Edit profile", edit_user_registration_path, class: "edit-button" %>
+        </div>
+        <div>
+          <%= link_to "Logout", destroy_user_session_path, class: "logout-button" %>
+        </div>
+      </div>
   </div>
 </div>
