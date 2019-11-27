@@ -3,10 +3,13 @@
   width: 100%;
   margin-bottom: 100px;
   .logo-home {
+    text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    text-align: center;
     img {
+      animation-duration: 3s;
+      animation-delay: 2s;
+      animation-iteration-count: infinite;
       width: 70%;
     }
   }
