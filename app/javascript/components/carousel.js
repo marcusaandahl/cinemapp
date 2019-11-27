@@ -7,6 +7,7 @@ const initCarousels = () => {
   slidesToScroll: 1,
   draggable: true,
   centerMode: true,
+  arrows: false,
 });
 
   $('#cinema-carousel').slick({
@@ -16,6 +17,7 @@ const initCarousels = () => {
   slidesToScroll: 1,
   draggable: true,
   centerMode: true,
+  arrows: false,
 });
 }
 

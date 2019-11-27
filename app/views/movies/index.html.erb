@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
-
 <div class="container movie-index">
+  <h1>Movies</h1>
   <div class="text-center">
     <div class="mb-2 search-bar">
       <div class="search-form">
@@ -19,13 +19,14 @@
      </div>
     </div>
   </div>
+  <div style="height: 10px"></div>
 <div class="menu-container">
-<div class="browse-title"><i class="fa fa-film"></i> Browse all movies</div>
-<%= link_to cinemas_path, class: 'browse-link' do %>
-  <i class="fas fa-map-marker-alt"></i> Browse all cinemas
+<div class="browse-title active-tab"><i class="fa fa-film"></i> All movies</div>
+<%= link_to cinemas_path, class: 'browse-title active-button' do %>
+  <i class="fas fa-map-marker-alt"></i> All cinemas
 <% end %>
-
 </div>
+<div style="height: 15px"></div>
   <div class="movie-card-box">
     <% @movies.each do |movie| %>
       <%= link_to movie_sessions_path(movie), class: 'movie-card' do %>
