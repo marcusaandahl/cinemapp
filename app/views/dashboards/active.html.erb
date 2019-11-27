@@ -1,5 +1,3 @@
-
-
 <div class="outter-container">
   <div>
     <%= link_to dashboard_path do %>
@@ -12,31 +10,29 @@
     <div class="type-amount">
       <h3>Active</h3>
     </div>
-    <% if @active_user_sessions.empty? %>
+    <% if @my_bookings.empty? %>
       <p>You have no current bookings</p>
     <% else %>
-      <% @active_user_sessions.each do |session| %>
-        <p>Session <%= session.id %></p>
-        <% session.bookings.each do |booking| %>
+      <% @my_bookings.each do |session, bookings| %>
+        <p><%= session.room.cinema.name %></p>
           <div class="dashboard-card">
             <div class="dashcard-body">
-              <p class="date-time"><%= booking.session.showtime.strftime("%d %b %Y %R") %></p>
-              <h4 class="movie-title"><%= booking.session.movie.name %></h4>
+              <p class="date-time"><%= session.showtime.strftime("%d %b %Y %R") %></p>
+              <h4 class="movie-title"><%= session.movie.name %></h4>
               <div class="tickets-price-info">
                 <div class="tickets-info">
                   <i class="fas fa-ticket-alt dashicons"></i>
-                  <h6 class="price"><%= session.bookings.count %></h6>
+                  <h6 class="price"><%= bookings.count %></h6>
                 </div>
                 <div class="price-info">
                   <i class="fas fa-money-bill-alt dashicons"></i>
-                  <h6 class="price"><%= booking.session.base_price %>kr</h6>
+                  <h6 class="price"><%= session.base_price %>kr</h6>
                 </div>
               </div>
             </div>
             <%= image_tag("QR.png", class: "QR") %>
             <%= image_tag("ticket.png", class: "ticketback") %>
           </div>
-        <% end %>
       <% end %>
     <% end %>
   </div>

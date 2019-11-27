@@ -280,7 +280,6 @@ booking4 = Booking.new(
   )
 booking4.save!
 
-
 booking5 = Booking.new(
   order: order1,
   session: sessions[3],
