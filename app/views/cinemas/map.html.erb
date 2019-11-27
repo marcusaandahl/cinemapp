@@ -6,9 +6,18 @@
   data-markers="<%= @marker.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
-
-          <%= link_to cinemas_path do %>
-            <i class="fas fa-arrow-left"></i>
-          <% end %>
+<% if request.referrer == "http://localhost:3000/cinemas"  %>
+  <%= link_to cinemas_path do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+<% elsif request.referrer == "http://localhost:3000/active" %>
+  <%= link_to active_path do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+<% elsif request.referrer == "http://localhost:3000/history" %>
+  <%= link_to history_path do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+<% end %>
 
 </div>
