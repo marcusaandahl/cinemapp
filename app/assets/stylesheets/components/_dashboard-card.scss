@@ -5,7 +5,7 @@
   width:95%;
   margin-top:10px;
   margin-left: 10px;
-  background-color: $lightgrey;
+  background-color: $darkergrey;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -76,10 +76,11 @@ h6 {
 .QR {
     position: relative;
     z-index: 2;
-    top: -7px;
-    right: -9px;
+    top: -12px;
+    right: -4px;
     width: 28%;
 }
+
 
   // .ticketback {
   //   position:absolute;
