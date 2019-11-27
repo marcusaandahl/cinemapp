@@ -14,6 +14,7 @@ class OrdersController < ApplicationController
 
       session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
+        customer: current_user.stripe_customer_id,
         line_items: [{
           name: order.id,
           images: [Cloudinary::Utils.cloudinary_url(order.bookings.first.session.movie.image)],

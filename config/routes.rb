@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  # mount StripeEvent::Engine, at: '/stripe-webhooks'
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 
   # GO DIRECTLY TO SESSIONS (SKIP MOVIES/CINEMAS)
 
