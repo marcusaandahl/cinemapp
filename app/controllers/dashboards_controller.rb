@@ -1,7 +1,7 @@
 class DashboardsController < ApplicationController
   def dashboard
     @my_orders = Order.where(user: current_user)
-    @user_sessions = Session.joins(bookings: :order).where("orders.user_id = ?", current_user).order(showtime: :asc).group(:id)
+    @user_sessions = Session.joins(bookings: :order).where("orders.user_id = ?", current_user).order(showtime: :asc).group(:id)     #AFTER CONNECTING THE TABLES IN THE USER MODEL WITH HAS MANY STATEMENT. IS THIS LINE NECESSARY OR CAN I USE current_user.sessions?
     @active_user_sessions = @user_sessions.where("showtime > ?", DateTime.now)
     @past_user_sessions = @user_sessions.where("showtime < ?", DateTime.now)
 
@@ -18,13 +18,14 @@ class DashboardsController < ApplicationController
   def active
     @user_sessions = Session.joins(bookings: :order).where("orders.user_id = ?", current_user).order(showtime: :asc).group(:id)
     @active_user_sessions = @user_sessions.where("showtime > ?", DateTime.now)
+    @my_bookings = current_user.bookings.joins(:session).where("sessions.showtime > ?", DateTime.now).order(showtime: :asc).group_by(&:session)
   end
 
   def history
-    @user_sessions = Session.joins(bookings: :order).where("orders.user_id = ?", current_user).order(showtime: :asc).group(:id)
+    @user_sessions = Session.joins(bookings: :order).where("orders.user_id = ?", current_user).order(showtime: :asc)
     @past_user_sessions = @user_sessions.where("showtime < ?", DateTime.now)
+    @my_bookings = current_user.bookings.joins(:session).where("sessions.showtime < ?", DateTime.now).order(showtime: :asc).group_by(&:session)
   end
-
 end
 
 

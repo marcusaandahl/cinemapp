@@ -1,5 +1,3 @@
-
-
 <div class="outter-container">
   <div>
     <%= link_to root_path do %>
@@ -10,14 +8,14 @@
   <div class="dashboard-container">
     <h2>Tickets</h2>
     <div class="type-amount">
-      <h3>Active</h3>
-      <%= link_to "See all (#{@active_user_sessions.count.count})", active_path, class: "link-dash" %>
+      <h3>Next event</h3>
+      <%= link_to "Show active (#{@active_user_sessions.count.count})", active_path, class: "link-dash" %>
     </div>
     <% if @active_user_sessions.empty? %>
       <p>You have no current bookings</p>
     <% else %>
     <% session = @active_user_sessions.first %>
-      <p>Session <%= session.id %></p>
+        <% booking = session.bookings.first %>
           <div class="dashboard-card">
             <div class="dashcard-body">
               <p class="date-time"><%= session.showtime.strftime("%d %b %Y %R") %></p>
@@ -42,36 +40,32 @@
 
 
     <div class="type-amount history">
-      <h3>History</h3>
-      <%= link_to "See all (#{@past_user_sessions.count.count})", history_path, class: "link-dash" %>
+      <h3>Last event</h3>
+      <%= link_to "History (#{@past_user_sessions.count.count})", history_path, class: "link-dash" %>
     </div>
-      <% if @past_user_sessions.empty? %>
-        <p>You have no past bookings</p>
-      <% else %>
-        <% @past_user_sessions.each do |session| %>
-          <p>Session <%= session.id %></p>
-          <% session.bookings.each do |booking| %>
-            <div class="dashboard-card">
-              <div class="dashcard-body">
-                <p class="date-time"><%= booking.session.showtime.strftime("%d %b %Y %R") %></p>
-                <h4 class="movie-title"><%= booking.session.movie.name %></h4>
-                <div class="tickets-price-info">
-                  <div class="tickets-info">
-                    <i class="fas fa-ticket-alt dashicons"></i>
-                    <h6 class="price"><%= session.bookings.count %></h6>
-                  </div>
-                  <div class="price-info">
-                    <i class="fas fa-money-bill-alt dashicons"></i>
-                    <h6 class="price"><%= booking.session.base_price %>kr</h6>
-                  </div>
+     <% if @past_user_sessions.empty? %>
+      <p>You have no current bookings</p>
+    <% else %>
+    <% session = @past_user_sessions.first %>
+        <% booking = session.bookings.first %>
+          <div class="dashboard-card">
+            <div class="dashcard-body">
+              <p class="date-time"><%= session.showtime.strftime("%d %b %Y %R") %></p>
+              <h4 class="movie-title"><%= session.movie.name %></h4>
+              <div class="tickets-price-info">
+                <div class="tickets-info">
+                  <i class="fas fa-ticket-alt dashicons"></i>
+                  <h6 class="price"><%= session.bookings.count %></h6>
                 </div>
-                <%= link_to "See all tickets (#{session.bookings.count})", dashboard_path, class: "link-dash" %>
+                <div class="price-info">
+                  <i class="fas fa-money-bill-alt dashicons"></i>
+                  <h6 class="price"><%= session.base_price %>kr</h6>
+                </div>
               </div>
-              <%= image_tag("QR.png", class: "QR") %>
-              <%= image_tag("ticket.png", class: "ticketback") %>
             </div>
-          <% end %>
+            <%= image_tag("QR.png", class: "QR") %>
+            <%= image_tag("ticket.png", class: "ticketback") %>
+          </div>
         <% end %>
-      <% end %>
   </div>
 </div>
