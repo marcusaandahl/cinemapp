@@ -19,19 +19,21 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50%;
+  height: 55%;
   background: rgb(178,45,12);
-  background: -moz-linear-gradient(0deg, rgba(178,45,12,1) 22%, rgba(178,45,12,1) 44%, rgba(178,45,12,0.7413340336134453) 64%, rgba(178,45,12,0.6516981792717087) 80%, rgba(178,45,12,0) 100%);
-  background: -webkit-linear-gradient(0deg, rgba(178,45,12,1) 22%, rgba(178,45,12,1) 44%, rgba(178,45,12,0.7413340336134453) 64%, rgba(178,45,12,0.6516981792717087) 80%, rgba(178,45,12,0) 100%);
-  background: linear-gradient(0deg, rgba(178,45,12,1) 22%, rgba(178,45,12,1) 44%, rgba(178,45,12,0.7413340336134453) 64%, rgba(178,45,12,0.6516981792717087) 80%, rgba(178,45,12,0) 100%);
+  background: rgb(178,45,12);
+  background: -moz-linear-gradient(0deg, rgba(178,45,12,0.923406862745098) 38%, rgba(178,45,12,0.7665441176470589) 68%, rgba(178,45,12,0.6376925770308124) 81%, rgba(178,45,12,0.4780287114845938) 90%, rgba(178,45,12,0) 98%);
+  background: -webkit-linear-gradient(0deg, rgba(178,45,12,0.923406862745098) 38%, rgba(178,45,12,0.7665441176470589) 68%, rgba(178,45,12,0.6376925770308124) 81%, rgba(178,45,12,0.4780287114845938) 90%, rgba(178,45,12,0) 98%);
+  background: linear-gradient(0deg, rgba(178,45,12,0.923406862745098) 38%, rgba(178,45,12,0.7665441176470589) 68%, rgba(178,45,12,0.6376925770308124) 81%, rgba(178,45,12,0.4780287114845938) 90%, rgba(178,45,12,0) 98%);
 
   // background: rgb(66,66,66);
   // background: -moz-linear-gradient(0deg, rgba(66,66,66,0.9794292717086834) 0%, rgba(66,66,66,0.9682247899159664) 41%, rgba(66,66,66,0.788953081232493) 64%, rgba(66,66,66,0.46682422969187676) 84%, rgba(66,66,66,0) 100%);
   // background: -webkit-linear-gradient(0deg, rgba(66,66,66,0.9794292717086834) 0%, rgba(66,66,66,0.9682247899159664) 41%, rgba(66,66,66,0.788953081232493) 64%, rgba(66,66,66,0.46682422969187676) 84%, rgba(66,66,66,0) 100%);
   // background: linear-gradient(0deg, rgba(66,66,66,0.9794292717086834) 0%, rgba(66,66,66,0.9682247899159664) 41%, rgba(66,66,66,0.788953081232493) 64%, rgba(66,66,66,0.46682422969187676) 84%, rgba(66,66,66,0) 100%);
     .cinema-info-text {
-      margin-top: 15px;
-      margin-left: 10px;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
       h5 {
       color: white;
       font-size: 12px;
@@ -43,9 +45,10 @@
       text-shadow: 1px 1px $darkergrey;
       }
       h3 {
+      text-shadow: 0.5px 0.5px $darkergrey;
       color: white;
       font-size: 14px;
-      opacity: 0.8;
+      opacity: 0.9;
       }
     }
   }
