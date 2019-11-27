@@ -14,7 +14,14 @@
       <p>You have no current bookings</p>
     <% else %>
       <% @my_bookings.each do |session, bookings| %>
-        <p><%= session.room.cinema.name %></p>
+        <div style="display: flex; justify-content:space-between; margin-top: 30px; margin-bottom: 0px">
+        <p style="margin-bottom: 0px; font-size: 20px;"><%= session.room.cinema.name %></p>
+        <div>
+              <%= link_to cinema_map_path(session.room.cinema), class: 'browse-link' do %>
+                <i class="fas fa-map-marker-alt"></i> Map
+              <% end %>
+        </div>
+        </div>
           <div class="dashboard-card">
             <div class="dashcard-body">
               <p class="date-time"><%= session.showtime.strftime("%d %b %Y %R") %></p>
