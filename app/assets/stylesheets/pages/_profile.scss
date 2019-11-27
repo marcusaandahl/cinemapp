@@ -50,7 +50,38 @@
      }
   }
 
-.edit-button {
-  margin-top: 10px;
+.profile-buttons {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  width: 100%;
+  margin-left: unset;
+  .edit-button {
+    font-size: 14px;
+    color: white;
+    font-family: Work Sans;
+    font-weight:600;
+    // font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    text-align: center;
+    background: $red;
+    width:48%;     // This value has to be changed accordingly to the occasion
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    .logout-button {
+    font-size: 14px;
+    color: white;
+    font-family: Work Sans;
+    font-weight:600;
+    margin-left: 10px;
+    // font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    text-align: center;
+    background: $red;
+    width:48%;     // This value has to be changed accordingly to the occasion
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
 }
 
