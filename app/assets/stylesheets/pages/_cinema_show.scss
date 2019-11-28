@@ -1,0 +1,23 @@
+.cinema-sessions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.session-cinema {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+  .img-container {
+    width: 100%;
+    height: 100px;
+    margin: unset;
+    overflow: hidden;
+    margin-bottom: 10px;
+    img {
+      width: 100%;
+      display:block;
+      margin:-21.875% 0;
+    }
+  }

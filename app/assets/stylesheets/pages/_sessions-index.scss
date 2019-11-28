@@ -50,7 +50,7 @@
       top: -10px;
       right: -16px;
       transform: rotate(-20deg);
-      animation-duration: 2s;
+      animation-duration: 3s;
       // animation-delay: 2s;
       animation-iteration-count: infinite;
       text-align: center;
@@ -67,19 +67,8 @@
   .grey-button {
     width: 100%;
   }
-
-  .img-container {
-    width: 100%;
-    height: 100px;
-    overflow: hidden;
-    margin-bottom: 10px;
-    img {
-      width: 100%;
-      display:block;
-      margin:-21.875% 0;
-    }
-  }
 }
+
 
 #bookings-list {
   display: flex;
