@@ -17,11 +17,13 @@ class CinemasController < ApplicationController
 
     def map
       @cinema = Cinema.find(params[:cinema_id])
+      infoWindowPre = render_to_string(partial: "info_window", locals: { cinema: @cinema })
+      puts infoWindowPre
       @marker =
         [{
           lat: @cinema.latitude,
           lng: @cinema.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { cinema: @cinema })
+          infoWindow: infoWindowPre
         }]
     end
 
