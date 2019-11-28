@@ -2,7 +2,7 @@
   <div
   id="map"
   style="width: 100%;
-  height: 812px;"
+  height: 100vh;"
   data-markers="<%= @marker.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
@@ -16,6 +16,10 @@
   <% end %>
 <% elsif request.referrer == "http://localhost:3000/history" %>
   <%= link_to history_path do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+<% else %>
+  <%= link_to cinemas_path do %>
     <i class="fas fa-arrow-left"></i>
   <% end %>
 <% end %>

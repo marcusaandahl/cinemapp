@@ -1,6 +1,6 @@
 
 .home-movie-poster img {
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   width: 100%;
   height: 200px;
   border-radius: 12px;
@@ -27,18 +27,20 @@
   box-shadow:0 0 10px rgba(255, 255, 255, 0.5);
   left: 0px;
   top: 15px;
-  text-align: center;
 
   .discount {
-
-    margin-top: 10px;
-    padding-right:5px;
+    margin-top: 15px;
+    text-align: center;
     h2 {
-      font-size: 22px;
-      color: $white;
+      color: white;
+      font-size: 20px;
       font-weight: bold;
       opacity: 1;
-      text-shadow: 1px 1px $turquoise;
+      text-shadow: 1px 1px $darkergrey;
+      margin-left: -5px;
+      animation-duration: 2s;
+      animation-delay: 2s;
+      animation-iteration-count: infinite;
     }
   }
 }
@@ -70,7 +72,7 @@
 
 .poster-content-text h2 {
   color: white;
-  font-size: 18px;
+  font-size: 28px;
   font-weight: 600;
   text-shadow: 1px 1px $darkergrey;
 }

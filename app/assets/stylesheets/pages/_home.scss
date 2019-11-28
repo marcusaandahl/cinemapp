@@ -9,13 +9,22 @@
     margin-top: 20px;
     margin-bottom: 20px;
     img {
-      animation-duration: 3s;
+      animation-duration: 4s;
       animation-delay: 2s;
       animation-iteration-count: infinite;
       width: 70%;
     }
   }
   h2 {
+    font-family: work sans;
+    color: $lightergrey;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 1px 1px $darkergrey;
+  }
+  h4 {
     font-family: work sans;
     font-size: 18px;
     color: $lightergrey;
