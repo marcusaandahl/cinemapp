@@ -32,11 +32,15 @@
     margin-top: 15px;
     text-align: center;
     h2 {
-      color: $white;
+      color: white;
+      font-size: 20px;
       font-weight: bold;
       opacity: 1;
-      text-shadow: 1px 1px $turquoise;
+      text-shadow: 1px 1px $darkergrey;
       margin-left: -5px;
+      animation-duration: 2s;
+      animation-delay: 2s;
+      animation-iteration-count: infinite;
     }
   }
 }

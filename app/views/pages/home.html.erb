@@ -13,7 +13,7 @@
             <% if movie.sessions != [] %>
               <div class="discount-highlight">
                 <div class="discount">
-                  <h2><%= movie.sessions.first&.current_discounted_price.second.to_i %>% off</h2>
+                  <h2 class="animated pulse"><%= movie.sessions.first&.current_discounted_price.second.to_i %>% off</h2>
                 </div>
               </div>
             <% end %>
