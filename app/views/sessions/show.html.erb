@@ -1,8 +1,10 @@
 <div class="container session-show">
   <h2><%= @movie.name %></h2>
+  <div style="height:10px"></div>
   <div class="row date-and-time">
     <div>
       <h3><%= @session.room.cinema.name %></h3>
+      <div style="height:10px"></div>
     </div>
     <div style="width: 10px">
     </div>
@@ -44,19 +46,23 @@
                hidden
         >
       </div>
+
     <% end %>
   </div>
   <div style="height:10px"></div>
 
 <div class="selected-seats">
+  <div style="height:10px"></div>
   <h2>Your selected seats:</h2>
   <div id="bookings-list">
     <p>You have no selected seats</p>
   </div>
+  <div style="height:10px"></div>
 </div>
 
   <div class="saving">
     <h1><i class="fas fa-coins"></i>  You save <span id="saving-span">0</span> kr</h1>
+    <div style="height:10px"></div>
   </div>
 
   <div class="book-card">
@@ -72,9 +78,10 @@
   </div>
 
     <!-- MARGIN NEEDS TO BE ADDED -->
-    <div style="height:10px"></div>
+    <div style="height:20px"></div>
+
   <div class="back-button">
-    <%= link_to "Go Back", movie_sessions_path(@movie), class: "btn grey-button" %>
+    <%= link_to "Go Back", movie_sessions_path, class: "btn grey-button" %>
   </div>
 
 
