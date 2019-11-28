@@ -34,7 +34,7 @@ $(document).ready(function(){
     case "root":
       $("#navbar-root-link").addClass("active");
       break;
-    case "seach":
+    case "search":
       $("#navbar-search-link").addClass("active");
       break;
     case "dashboard":
