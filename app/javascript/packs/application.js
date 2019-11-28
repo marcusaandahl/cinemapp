@@ -5,6 +5,7 @@ import $ from 'jquery';
 global.$ = jQuery;
 import 'slick-carousel';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { initCarousels } from "../components/carousel";
 
