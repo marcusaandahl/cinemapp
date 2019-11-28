@@ -1,4 +1,7 @@
-  <div class='calendar-container'>
+ <div class="moviename-calendar">
+  <h2><%= @movie.name %></h2>
+ </div>
+ <div class='calendar-container'>
   <div class="day">
     <p>M</p>
     <p>T</p>
@@ -23,7 +26,6 @@
   </div>
 </div>
 <div class="container sessions-index">
-<h2><%= @movie.name %></h2>
 <% if @movie.sessions.empty? %>
   <p>Sorry, there are no sessions available for this film</p>
   <% else %>
