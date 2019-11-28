@@ -4,7 +4,9 @@
 
 #navbar-container {
   width: 100%;
-  padding: 8px;
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 30px;
   ul {
     width: 100%;
     padding: 0px;
@@ -17,6 +19,7 @@
         padding: 0px 0px 0px 0px;
         width: auto;
         height: auto;
+        font-size: 18px;
       }
     }
   }

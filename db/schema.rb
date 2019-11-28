@@ -10,15 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_184939) do
+ActiveRecord::Schema.define(version: 2019_11_27_161411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "session_id"
-    t.string "discounted_price"
-    t.string "integer"
     t.bigint "seat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -70,7 +68,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_184939) do
     t.bigint "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "booked", default: false
+    t.boolean "booked"
     t.index ["room_id"], name: "index_seats_on_room_id"
   end
 
@@ -97,6 +95,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_184939) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "stripe_customer_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

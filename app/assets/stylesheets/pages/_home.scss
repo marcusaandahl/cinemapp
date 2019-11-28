@@ -1,1 +1,22 @@
 // Specific CSS for your home-page
+.home {
+  width: 100%;
+  margin-bottom: 100px;
+  .logo-home {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    img {
+      animation-duration: 3s;
+      animation-delay: 2s;
+      animation-iteration-count: infinite;
+      width: 70%;
+    }
+  }
+  h2 {
+    font-family: work sans;
+    font-size: 18px;
+    color: $lightergrey;
+  }
+}
+

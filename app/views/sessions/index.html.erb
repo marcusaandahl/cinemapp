@@ -1,9 +1,29 @@
+  <div class='calendar-container'>
+  <div class="day">
+    <p>M</p>
+    <p>T</p>
+    <p>W</p>
+    <p>T</p>
+    <p>F</p>
+    <p>S</p>
+    <p>S</p>
+  </div>
+  <div class="date">
+    <p>25</p>
+    <p>26</p>
+    <p>27</p>
+    <p>28</p>
+    <p><span class="rounded-circle">29</span></p>
+    <p>30</p>
+    <p>1</p>
+  </div>
+  <div class="month">
+    <p id="margin-left">nov</p>
+    <p>dec</p>
+  </div>
+</div>
 <div class="container sessions-index">
 <h2><%= @movie.name %></h2>
-<div class="img-container">
-<%= cl_image_tag(@movie.image) %>
-</div>
-<h2>Upcoming sessions:</h2>
 <% if @movie.sessions.empty? %>
   <p>Sorry, there are no sessions available for this film</p>
   <% else %>

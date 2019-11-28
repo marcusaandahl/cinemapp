@@ -1,2 +1,32 @@
-<%= link_to "Log out", destroy_user_session_path, :method => 'delete', class: "link-dash" %>
-<h2>Profile PAGE</h2>
+<div class="container profile">
+  <div class="profile-header">
+    <%= link_to root_path do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+    <div class="user-name">
+      <h2><%= current_user.name %></h2>
+    </div>
+    <img class="avatar-bordered" src="https://pbs.twimg.com/profile_images/3377340707/a85f71ea118e7a9b1a0076a28986838c.jpeg" alt="The Cage">
+  </div>
+
+  <div class="profile-content">
+    <h2>Payment option:</h2>
+    <%= image_tag("red.png", class: "credit-card") %>
+    <div style="height: 10px"></div>
+    <h2>Profile info:</h2>
+      <div class="profile-card">
+        <div class="profile-card-content">
+          <h2><%= current_user.name %></h2>
+          <h3><%= current_user.email %></h3>
+        </div>
+      </div>
+      <div class="row profile-buttons">
+        <div>
+          <%= link_to "Edit profile", edit_user_registration_path, class: "edit-button" %>
+        </div>
+        <div>
+          <%= link_to "Logout", destroy_user_session_path, class: "logout-button" %>
+        </div>
+      </div>
+  </div>
+</div>

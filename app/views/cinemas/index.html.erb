@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container movie-index">
+  <h1>Cinemas</h1>
   <div class="text-center">
     <div class="mb-2 search-bar">
       <div class="search-form">
@@ -19,13 +20,14 @@
      </div>
     </div>
   </div>
+  <div style="height: 10px"></div>
   <div class="menu-container">
-    <%= link_to movies_path, class: 'browse-link' do %>
-      <i class="fas fa-film"></i> Browse all movies
+    <%= link_to movies_path, class: 'browse-title active-button' do %>
+      <i class="fas fa-film"></i> All movies
     <% end %>
-    <div class="browse-title"><i class="fa fa-map-marker-alt"></i> Browse all cinemas</div>
+    <div class="browse-title active-tab"><i class="fa fa-map-marker-alt"></i> All cinemas</div>
   </div>
-
+  <div style="height: 15px"></div>
   <div class="product-card">
     <% @cinemas.each do |cinema| %>
      <%= link_to cinema_path(cinema), class: 'cinema-card' do %>
@@ -37,18 +39,19 @@
         <div class="product-card-infos">
           <h2><%= cinema.name %></h2>
           <h3><%= cinema.address %></h3>
-          <p id="darker">Copenhagen</p>
-          <div class="row cinema-links">
+          <div style="height: 7px"></div>
+             <div class="row cinema-links">
             <div>
-              <%= link_to cinema_path(cinema), class: 'browse-link' do %>
+              <%= link_to cinema_path(cinema), class: 'cinema-button' do %>
                 <i class="fas fa-calendar-alt"></i> Sessions
               <% end %>
             </div>
+            <div style="width: 25px;"></div>
             <div>
-              <%= link_to movies_path, class: 'browse-link' do %>
+              <%= link_to cinema_map_path(cinema), class: 'cinema-button' do %>
                 <i class="fas fa-map-marker-alt"></i> Map
               <% end %>
-             </div>
+            </div>
           </div>
         </div>
       </div>
