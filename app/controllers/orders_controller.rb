@@ -38,6 +38,7 @@ class OrdersController < ApplicationController
     @order = current_user.orders.find(params[:id])
     @session = Session.find(@order.bookings.first.session_id)
     @movie = Movie.find(@session.movie_id)
+    @cinema = @session.room.cinema
   end
 
   private
