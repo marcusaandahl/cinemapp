@@ -80,7 +80,8 @@ url1 = "http://www.cinema.com.my/images/news/2019/7n_malaysianewcinemas00.jpg"
 empire = Cinema.new(
  name: "Empire Cinema",
  address: "Guldbergsgade 29F, 2200 København",
- distance: 300
+ distance: 300,
+ map_url: "https://www.google.com/maps/dir/Le+Wagon+Copenhagen,+Ahornsgade+15,+2200+K%C3%B8benhavn/empire+cinema+google+maps/@55.6919033,12.5565405,18z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x4652531d826ddca1:0xbd20289f8902cd62!2m2!1d12.5596301!2d55.6915195!1m5!1m1!1s0x465253aafc260e13:0x551d83ab11eff35b!2m2!1d12.5558093!2d55.6918616!3e2"
 )
 empire.image = url1
 empire.save!
@@ -89,7 +90,8 @@ url2 = "https://files.guidedanmark.org/files/382/174564_Park_Bio.jpg?qfix"
 park = Cinema.new(
  name: "Park Bio",
  address: "Østerbrogade 79, 2100 København",
- distance: 2200
+ distance: 2200,
+ map_url: "https://www.google.com/maps/dir/Le+Wagon+Copenhagen,+Ahornsgade+15,+2200+K%C3%B8benhavn/Park+Bio,+%C3%98sterbrogade,+Copenhagen+Municipality/@55.6976181,12.5600394,15z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x4652531d826ddca1:0xbd20289f8902cd62!2m2!1d12.5596301!2d55.6915195!1m5!1m1!1s0x465252f09d00ea3d:0x2923d6057c6aa8e!2m2!1d12.5772073!2d55.703816!3e2"
 
 )
 park.image = url2
@@ -99,7 +101,8 @@ url4 = "https://www.kino.dk/sites/default/files/styles/k_16-9_big/public/cinema/
 palads = Cinema.new(
  name: "Palads Teatret",
  address: "Axeltorv 9, 1609 København",
- distance: 2300
+ distance: 2300,
+ map_url: "https://www.google.com/maps/dir/Le+Wagon+Copenhagen,+Ahornsgade+15,+2200+K%C3%B8benhavn/Palads+Teatret,+Axeltorv,+Copenhagen+Municipality/@55.6840771,12.5538821,15z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x4652531d826ddca1:0xbd20289f8902cd62!2m2!1d12.5596301!2d55.6915195!1m5!1m1!1s0x4652530c3b3dd1a1:0x42861f83a66fb0f!2m2!1d12.5635087!2d55.6764304!3e2"
 
 )
 palads.image = url4
@@ -109,7 +112,9 @@ url3 = "https://www.airbnb.com/google_place_photo?photoreference=CmRaAAAAe5WJ435
 falkoner = Cinema.new(
  name: "Falkoner",
  address: "Sylows Alle 15, 2000 Frederiksberg",
- distance: 3000
+ distance: 3000,
+ map_url: "https://www.google.com/maps/dir/Le+Wagon+Copenhagen,+Ahornsgade,+Copenhagen+Municipality/Nordic+Film+Cinemas+Falconer,+Sylows+Alle,+Frederiksberg/@55.6861496,12.5367622,15z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x4652531d826ddca1:0xbd20289f8902cd62!2m2!1d12.5596301!2d55.6915195!1m5!1m1!1s0x465253bc0cb47173:0x25b908d9d35eaf31!2m2!1d12.5314048!2d55.6801292!3e2"
+
 
 )
 falkoner.image = url3
@@ -268,8 +273,9 @@ end
 
 
 puts 'Creating sessions'
-session_times = [DateTime.now, (DateTime.now + 1.hours), (DateTime.now + 3.hours), (DateTime.now + 5.hours)]
+base_time = DateTime.now.change({ hour: 19, min: 0, sec: 0 })
 cinemas.each do |cinema|
+session_times = [base_time, (base_time + 1.5.hours), (base_time + 2.25.hours), (base_time + 3.75.hours)]
   cinema.rooms.each.with_index do |room, index|
    session_times.each do |showtime|
 
@@ -286,7 +292,7 @@ sesh.save!
 sesh2 = Session.new(
   room: room,
   movie: movies[4+index],
-  showtime: showtime + 1.hours,
+  showtime: showtime,
   base_price: 120,
   max_discount: 40,
   min_empty_seats:50, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
@@ -296,7 +302,7 @@ sesh2.save!
 sesh3 = Session.new(
   room: room,
   movie: movies[8+index],
-  showtime: showtime + 2.hours,
+  showtime: showtime,
   base_price: 120,
   max_discount: 40,
   min_empty_seats:50, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
@@ -306,7 +312,7 @@ sesh3.save!
 sesh4 = Session.new(
   room: room,
   movie: movies[12+index],
-  showtime: showtime + 3.hours,
+  showtime: showtime,
   base_price: 120,
   max_discount: 40,
   min_empty_seats:50, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
@@ -315,7 +321,43 @@ sesh4 = Session.new(
 sesh4.save!
     end
   end
+base_time += 0.25.hours
 end
+
+old = Session.new(
+  room: Room.last,
+  movie: lion_king,
+  showtime: base_time - 24.hours,
+  base_price: 120,
+  max_discount: 40,
+  min_empty_seats:50, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  hours_for_discount:3,
+)
+old.save!
+
+
+old2 = Session.new(
+  room: Room.second,
+  movie: toystory,
+  showtime: base_time - 48.hours,
+  base_price: 120,
+  max_discount: 40,
+  min_empty_seats:50, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  hours_for_discount:3,
+)
+old2.save!
+
+old3 = Session.new(
+  room: Room.second,
+  movie: avengers,
+  showtime: base_time - 71.hours,
+  base_price: 120,
+  max_discount: 40,
+  min_empty_seats:50, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  hours_for_discount:3,
+)
+old3.save!
+
 
 sessions = Session.all
 
@@ -377,7 +419,7 @@ order1 = Order.new(
 order1.save!
 
 order2 = Order.new(
-  user:marcus,
+  user:rasmus,
   state: "completed"
   )
 order2.save!
@@ -423,10 +465,39 @@ booking5 = Booking.new(
 booking5.save!
 
 booking6 = Booking.new(
-  order: order2,
+  order: order1,
   session: sessions[2],
   seat:Seat.last,
   )
 booking6.save!
+
+
+booking7 = Booking.new(
+  order: order2,
+  session: old,
+  seat:Seat.last,
+  )
+booking7.save!
+
+booking8 = Booking.new(
+  order: order2,
+  session: old2,
+  seat:Seat.last,
+  )
+booking8.save!
+
+booking9 = Booking.new(
+  order: order2,
+  session: old3,
+  seat:Seat.last,
+  )
+booking9.save!
+
+booking10 = Booking.new(
+  order: order2,
+  session: old,
+  seat:Seat.last,
+  )
+booking10.save!
 order1.update(price: order1.price_update)
 order2.update(price: order2.price_update)

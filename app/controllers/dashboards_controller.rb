@@ -25,7 +25,7 @@ class DashboardsController < ApplicationController
   def history
     @user_sessions = Session.joins(bookings: :order).where("orders.user_id = ?", current_user).order(showtime: :asc)
     @past_user_sessions = @user_sessions.where("showtime < ?", DateTime.now)
-    @my_bookings = current_user.bookings.joins(:session).where("sessions.showtime < ?", DateTime.now).order(showtime: :asc).group_by(&:session)
+    @my_bookings = current_user.bookings.joins(:session).where("sessions.showtime < ?", DateTime.now).order(showtime: :desc).group_by(&:session)
   end
 end
 
