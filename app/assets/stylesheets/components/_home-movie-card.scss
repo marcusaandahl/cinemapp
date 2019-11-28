@@ -20,7 +20,7 @@
   // transform: rotate(90deg);
   height: 50px;
   width: 100px;
-  background-color: $lightgrey;
+  background-color: $turquoise;
   position: absolute;
   opacity: 0.9;
   border-radius: 5%;
@@ -30,8 +30,11 @@
   text-align: center;
 
   .discount {
-    margin-top: 15px;
+
+    margin-top: 10px;
+    padding-right:5px;
     h2 {
+      font-size: 22px;
       color: $white;
       font-weight: bold;
       opacity: 1;
