@@ -6,7 +6,7 @@
   <div class="films">
     <h2>Popular films</h2>
     <div id="film-carousel">
-      <% @movies.first(5).each do |movie| %>
+      <% @movies.first(3).each do |movie| %>
         <div class="home-movie-poster">
           <%= link_to movie_sessions_path(movie), class: 'movie-card' do %>
              <%= cl_image_tag movie.image %>
@@ -16,14 +16,14 @@
                   <h2 class="animated pulse"><%= movie.sessions.first&.current_discounted_price.second.to_i %>% off</h2>
                 </div>
               </div>
-            <% end %>
             <div class="poster-content">
               <div class="poster-content-text">
                 <h2><%= movie.name %></h2>
                 <h5><%= movie.sessions.first&.room&.cinema&.name %></h5>
-                <h5><%= movie.sessions.first&.showtime&.strftime("%d/%m %I:%M%p") %></h5>
-                <h3><i class="fas fa-tags"></i> <span class="original-price"><%= @sessions.first&.base_price %> kr</span> | <%= @sessions.first&.current_discounted_price.first %> kr </h3>
+                <h5><%= movie.sessions.first&.showtime&.strftime("%d/%m %H:%M") %></h5>
+                <h3><i class="fas fa-tags"></i> <span class="original-price"><%= movie.sessions.first&.base_price %> kr</span> | <%= movie.sessions.first&.current_discounted_price.first %> kr </h3>
             </div>
+            <% end %>
           </div>
           <% end %>
         </div>
