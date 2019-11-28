@@ -35,7 +35,7 @@
                 </div>
                 <div class="price-info">
                   <i class="fas fa-money-bill-alt dashicons"></i>
-                  <h6 class="price"><%= session.current_discounted_price[0] %>kr</h6>
+                  <h6 class="price"><%= session.current_discounted_price[0] * session.bookings.count %>kr</h6>
                 </div>
               </div>
             </div>
