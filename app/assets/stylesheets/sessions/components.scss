@@ -32,14 +32,22 @@
 }
 
 .seat-selected {
+  background-color: $red;
+  color: white;
+}
+
+.booked {
+  pointer-events: none;
+}
+
+.userBooked {
   background-color: $turquoise;
   color: $darkergrey;
 }
 
-.booked {
+.otherBooked {
   background-color: $darkgrey;
   color: white;
-  pointer-events: none;
 }
 
 .card.seat {

@@ -31,7 +31,7 @@
       <div class="card-seat">
         <% key = seat.id %>
           <label for="<%= key %>">
-            <div class="card seat" data-price="<%= @session.base_price %>" data-discountprice="<%= @session.current_discounted_price.first %>" data-name="<%= seat.name %>" data-booked="<%= seat.booked == true ? true : false %>" id="seat-<%= seat.id %>" >
+            <div class="card seat" data-userseat="<%= @user_seats.include?(seat.id) ? true : false %>" data-price="<%= @session.base_price %>" data-discountprice="<%= @session.current_discounted_price.first %>" data-name="<%= seat.name %>" data-booked="<%= seat.booked == true ? true : false %>" id="seat-<%= seat.id %>" >
 
                 <p class="card-title" ><%= seat.name %></p>
             </div>
@@ -50,6 +50,24 @@
     <% end %>
   </div>
   <div style="height:10px"></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col" style="white-space: nowrap;">
+      <div class="card seat booked"><p>  </p></div>
+      <p>Available Seats</p>
+    </div>
+
+    <div class="col">
+      <div class="card seat booked booked otherBooked"><p>  </p></div>
+      <p>Unavailable Seats</p>
+    </div>
+
+    <div class="col">
+      <div class="card seat booked userBooked"><p>  </p></div>
+      <p>Own Seats</p>
+    </div>
+  </div>
+</div>
 
 <div class="selected-seats">
   <div style="height:10px"></div>
