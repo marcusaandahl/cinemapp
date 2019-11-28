@@ -36,10 +36,7 @@
       display:flex;
       margin-top: 10px;
       margin-bottom: 10px;
-      border-bottom-style: solid;
-      border-bottom-color: rgba(255,255,255,0.1);
-      border-bottom-left-radius: 10%;
-      border-bottom-right-radius: 10%;
+
       .checkout-row-title{
         margin-bottom:0px;
       }
@@ -48,6 +45,8 @@
       }
       h4 {
         font-size:16px;
+        color: $lightergrey;
+        opacity: 0.8;
       }
       .myicons{
         padding-top: 5px;
