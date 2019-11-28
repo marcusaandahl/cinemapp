@@ -27,6 +27,43 @@
     width: auto;
   }
 
+  .sessions-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .movie-sessions {
+    display: flex;
+  }
+  .session-each {
+    margin-right: 30px;
+    margin-bottom: 20px;
+    position: relative;
+    .session-discount {
+      width: 42px;
+      height: 30px;
+      border-radius: 8px;
+      background-color: $lightergrey;
+      position: absolute;
+      top: -10px;
+      right: -16px;
+      transform: rotate(-20deg);
+      animation-duration: 2s;
+      // animation-delay: 2s;
+      animation-iteration-count: infinite;
+      text-align: center;
+      opacity: 0.9;
+      p {
+        font-weight: 500;
+        color: $red;
+        margin-top: 5px;
+        font-size: 13px;
+      }
+    }
+  }
+
   .grey-button {
     width: 100%;
   }
