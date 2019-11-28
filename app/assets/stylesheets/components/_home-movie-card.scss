@@ -31,11 +31,13 @@
 
   .discount {
     margin-top: 15px;
+    text-align: center;
     h2 {
       color: $white;
       font-weight: bold;
       opacity: 1;
       text-shadow: 1px 1px $turquoise;
+      margin-left: -5px;
     }
   }
 }
