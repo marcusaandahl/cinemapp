@@ -3,6 +3,7 @@
 <h2><%= @cinema.name %></h2>
 <%= link_to cinema_map_path(@cinema) do %>
    <h4><i class="fas fa-map-marker-alt"></i> <%= @cinema.address %></h4>
+   <div style="height:10px"></div>
 <% end %>
 
 <div class="img-container">
@@ -12,14 +13,14 @@
 <% if @cinema.rooms.empty? %>
   <p>Sorry, there are no sessions available at this cinema</p>
   <% else %>
-    <% @cinema.movies.each do |movie| %>
-      <div class="movie-sessions">
+    <% @cinema.movies.distinct.each do |movie| %>
           <h3><%= movie.name %></h3>
           <h4>Next sessions:</h4>
+          <div class="cinema-sessions">
           <% @cinema.sessions.where(movie: movie).each do |session| %>
-            <%= link_to "#{session.showtime.strftime("%I:%M%p")}", movie_session_path(movie, session), class: "btn red-button" %>
+            <%= link_to "#{session.showtime.strftime("%I:%M%p")}", movie_session_path(movie, session), class: "red-button session-each" %>
           <% end %>
-      </div>
+        </div>
       <div style="height:10px"></div>
    <% end %>
  <% end %>

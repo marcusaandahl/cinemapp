@@ -28,10 +28,14 @@ class SessionsController < ApplicationController
 
   def getUserSeats(session)
     userSeats = []
-    current_user.orders.each do |order|
-      if order.bookings.first.session_id == session.id
-        order.bookings.each do |booking|
-          userSeats.push(booking.seat_id)
+    if user_signed_in?
+      unless current_user.orders.count == 0
+        current_user.orders.each do |order|
+          if order.bookings.first.session_id == session.id
+            order.bookings.each do |booking|
+              userSeats.push(booking.seat_id)
+            end
+          end
         end
       end
     end
