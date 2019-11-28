@@ -1,7 +1,9 @@
 .session-show {
   margin: unset;
-  margin-top: 10px;
+  margin-top: 30px;
+  margin-bottom: 100px;
   width: 100%;
+  position: relative;
   h2 {
     color: white;
     font-family: Work Sans;
@@ -24,6 +26,20 @@
   }
 }
 
+.legenda {
+  width: 90%;
+  margin-left: 17px;
+  display: flex;
+  justify-content: flex-start;
+
+  p{
+    margin-left: 5px;
+    color: $lightgrey;
+    margin-top: 2px;
+  }
+}
+
+
 .date-and-time {
   display: flex;
   justify-content: flex-start;
@@ -32,8 +48,8 @@
 }
 
 .seat-selected {
-  background-color: $red;
-  color: white;
+  background-color: $turquoise;
+  color: $darkergrey;
 }
 
 .booked {

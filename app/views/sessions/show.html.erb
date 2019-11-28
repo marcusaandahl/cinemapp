@@ -1,17 +1,19 @@
 <div class="container session-show">
-  <h2><%= @movie.name %></h2>
-  <div style="height:10px"></div>
-  <div class="row date-and-time">
-    <div>
-      <h3><%= @session.room.cinema.name %></h3>
-      <div style="height:10px"></div>
+
+    <h2><%= @movie.name %></h2>
+
+    <div style="height:10px"></div>
+    <div class="row date-and-time">
+      <div>
+        <h3><%= @session.room.cinema.name %></h3>
+        <div style="height:10px"></div>
+      </div>
+      <div style="width: 10px">
+      </div>
+      <div>
+        <h3><%= @session.showtime.strftime("%d/%m %I:%M%p") %></h3>
+      </div>
     </div>
-    <div style="width: 10px">
-    </div>
-    <div>
-      <h3><%= @session.showtime.strftime("%d/%m %I:%M%p") %></h3>
-    </div>
-  </div>
   <div style="height:10px"></div>
 
 
@@ -50,24 +52,21 @@
     <% end %>
   </div>
   <div style="height:10px"></div>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col" style="white-space: nowrap;">
-      <div class="card seat booked"><p>  </p></div>
-      <p>Available Seats</p>
+
+  <div class="row legenda">
+    <div class="row">
+      <div class="card seat booked"></div>
+      <p>Available</p>
     </div>
 
-    <div class="col">
-      <div class="card seat booked booked otherBooked"><p>  </p></div>
-      <p>Unavailable Seats</p>
+    <div class="row" style="margin-left: 25px;">
+      <div class="card seat booked booked otherBooked"></div>
+      <p>Booked</p>
     </div>
 
-    <div class="col">
-      <div class="card seat booked userBooked"><p>  </p></div>
-      <p>Own Seats</p>
-    </div>
+
   </div>
-</div>
+
 
 <div class="selected-seats">
   <div style="height:10px"></div>
