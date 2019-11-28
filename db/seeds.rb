@@ -79,7 +79,8 @@ puts 'Creating cinemas'
 url1 = "http://www.cinema.com.my/images/news/2019/7n_malaysianewcinemas00.jpg"
 empire = Cinema.new(
  name: "Empire Cinema",
- address: "Guldbergsgade 29F, 2200 København"
+ address: "Guldbergsgade 29F, 2200 København",
+ distance: 300
 )
 empire.image = url1
 empire.save!
@@ -87,26 +88,32 @@ empire.save!
 url2 = "https://files.guidedanmark.org/files/382/174564_Park_Bio.jpg?qfix"
 park = Cinema.new(
  name: "Park Bio",
- address: "Østerbrogade 79, 2100 København"
+ address: "Østerbrogade 79, 2100 København",
+ distance: 2200
+
 )
 park.image = url2
 park.save!
 
-url3 = "https://www.airbnb.com/google_place_photo?photoreference=CmRaAAAAe5WJ435w4SOA0omQku7aZZhjp4YXwcrgayN6R_eRmBMo8PfZLZtXVnAxZj4uU7obIvpU9uOUAIQ0ajaGWGVts1NOVhgKqsjw9T0B1pIrUECVVVrj4Dfb1Zhc-JxwUaQmEhCkIyRFHpttf-kMGEjZbBgCGhRNjEvKsmi8Qa-jWsWEbEjq41IbLg&maxwidth=1000&maxheight=1000&place_id=31244"
-falkoner = Cinema.new(
- name: "Falkoner",
- address: "Sylows Alle 15, 2000 Frederiksberg"
-)
-falkoner.image = url3
-falkoner.save!
-
 url4 = "https://www.kino.dk/sites/default/files/styles/k_16-9_big/public/cinema/paladsny.jpg"
 palads = Cinema.new(
  name: "Palads Teatret",
- address: "Axeltorv 9, 1609 København"
+ address: "Axeltorv 9, 1609 København",
+ distance: 2300
+
 )
 palads.image = url4
 palads.save!
+
+url3 = "https://www.airbnb.com/google_place_photo?photoreference=CmRaAAAAe5WJ435w4SOA0omQku7aZZhjp4YXwcrgayN6R_eRmBMo8PfZLZtXVnAxZj4uU7obIvpU9uOUAIQ0ajaGWGVts1NOVhgKqsjw9T0B1pIrUECVVVrj4Dfb1Zhc-JxwUaQmEhCkIyRFHpttf-kMGEjZbBgCGhRNjEvKsmi8Qa-jWsWEbEjq41IbLg&maxwidth=1000&maxheight=1000&place_id=31244"
+falkoner = Cinema.new(
+ name: "Falkoner",
+ address: "Sylows Alle 15, 2000 Frederiksberg",
+ distance: 3000
+
+)
+falkoner.image = url3
+falkoner.save!
 
 puts 'saving cinemas'
 
