@@ -1,14 +1,16 @@
 <div class="outter-container">
+  <!-- NO BACK IN DASHBOARD
   <div>
-    <%= link_to root_path do %>
+    <%=# link_to root_path do %>
       <i class="fas fa-arrow-left"></i>
-    <% end %>
+    <%# end %>
   </div>
+  -->
 
   <div class="dashboard-container">
     <h2>Tickets</h2>
     <div class="type-amount">
-      <h3>Next event</h3>
+      <h3>Next events</h3>
       <%= link_to "Show active (#{@active_user_sessions.count.count})", active_path, class: "link-dash" %>
     </div>
     <% if @active_user_sessions.empty? %>
@@ -42,7 +44,7 @@
 
 
     <div class="type-amount history">
-      <h3>Last event</h3>
+      <h3>Past events</h3>
       <%= link_to "History (#{@past_user_sessions.count.count})", history_path, class: "link-dash" %>
     </div>
      <% if @past_user_sessions.empty? %>

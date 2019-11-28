@@ -15,11 +15,15 @@ $(document).ready(function(){
   var type;
 
   if ((/[/]movies\w*/).test(window.location.pathname)) {
-    type = "movies"
+    type = "search"
   } else if ((/[/]dashboard\w*/).test(window.location.pathname)) {
-    type = "bookings";
+    type = "dashboard";
   } else if ((/[/]profile\w*/).test(window.location.pathname)) {
     type = "profile";
+  } else if ((/[/]users\w*/).test(window.location.pathname)) {
+    type = "profile";
+  } else if ((/[/]cinemas\w*/).test(window.location.pathname)) {
+    type = "search";
   } else if ((/[/]/).test(window.location.pathname)) {
     type = "root";
   }
@@ -30,10 +34,10 @@ $(document).ready(function(){
     case "root":
       $("#navbar-root-link").addClass("active");
       break;
-    case "movies":
-      $("#navbar-movies-link").addClass("active");
+    case "seach":
+      $("#navbar-search-link").addClass("active");
       break;
-    case "bookings":
+    case "dashboard":
       $("#navbar-dashboard-link").addClass("active");
       break;
     case "profile":

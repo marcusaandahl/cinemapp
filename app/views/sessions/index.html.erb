@@ -40,7 +40,7 @@
             <%# end %>
               <div class="session-each">
                 <div class="session-discount animated pulse"><p>-<%= @sessions.first&.current_discounted_price.second.to_i %>%</p></div>
-                <%= link_to "#{session.showtime.strftime("%I:%M%p")}", movie_session_path(@movie, session), class: "btn red-button" %>
+                <%= link_to "#{session.showtime.strftime("%H:%M")}", movie_session_path(@movie, session), class: "btn red-button" %>
               </div>
             </div>
             <div style="height:10px"></div>
