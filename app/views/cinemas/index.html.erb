@@ -37,7 +37,10 @@
           crop: :fill, class: "product-image") %>
         </div>
         <div class="product-card-infos">
+          <div style="display: flex; justify-content: space-between;">
           <h2><%= cinema.name %></h2>
+          <p>(<%= cinema.distance %> m)</p>
+          </div>
           <h3><%= cinema.address %></h3>
           <div style="height: 7px"></div>
              <div class="row cinema-links">
