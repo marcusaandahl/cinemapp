@@ -11,9 +11,11 @@
       <h3>Active</h3>
     </div>
     <% if @my_bookings.empty? %>
+    <div style="height:10px"></div>
       <p>You have no current bookings</p>
     <% else %>
       <% @my_bookings.each do |session, bookings| %>
+      <div style="height:20px"></div>
         <div style="display: flex; justify-content:space-between; margin-top: 30px; margin-bottom: 0px">
         <p style="margin-bottom: 0px; font-size: 20px;"><%= session.room.cinema.name %></p>
         <div>

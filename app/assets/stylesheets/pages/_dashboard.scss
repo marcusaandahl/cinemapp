@@ -31,7 +31,7 @@
     }
 
       .history {
-        margin-top:30px;
+        margin-top:20px;
       }
     .type-amount {
       display:flex;
@@ -47,13 +47,13 @@
 }
       .link-dash{
         margin:auto 0;
-        color:#41D3BD;       //turquoise
+        color: #e2e2e2;       //turquoise
         // color:#8fbf00;       //green
         // color:#00ffff;          //vibrant turqoise
         // color:#00ffb2;          //light green
         // color:#00ff72;
         // color:#52d1dc;          //dark turoqiuse
-
+        opacity: 0.7;
         font-family: Work Sans;
         font-size: 20px;
       }

@@ -12,10 +12,12 @@
       <%= link_to "Show active (#{@active_user_sessions.count.count})", active_path, class: "link-dash" %>
     </div>
     <% if @active_user_sessions.empty? %>
+    <div style="height: 10px"></div>
       <p>You have no current bookings</p>
     <% else %>
     <% session = @active_user_sessions.first %>
         <% booking = session.bookings.first %>
+
           <div class="dashboard-card">
             <div class="dashcard-body">
               <p class="date-time"><%= session.showtime.strftime("%d %b %Y %R") %></p>
