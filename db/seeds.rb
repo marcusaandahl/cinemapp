@@ -276,16 +276,36 @@ sesh = Session.new(
   hours_for_discount:24,
 )
 sesh.save!
-# sesh2 = Session.new(
-#   room: room,
-#   movie: movies[4+index],
-#   showtime: showtime + 1.hours,
-#   base_price: 120,
-#   max_discount: 40,
-#   min_empty_seats:50, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
-#   hours_for_discount:3,
-# )
-# sesh2.save!
+sesh2 = Session.new(
+  room: room,
+  movie: movies[4+index],
+  showtime: showtime + 1.hours,
+  base_price: 120,
+  max_discount: 40,
+  min_empty_seats:50, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  hours_for_discount:3,
+)
+sesh2.save!
+sesh3 = Session.new(
+  room: room,
+  movie: movies[8+index],
+  showtime: showtime + 2.hours,
+  base_price: 120,
+  max_discount: 40,
+  min_empty_seats:50, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  hours_for_discount:3,
+)
+sesh3.save!
+sesh4 = Session.new(
+  room: room,
+  movie: movies[12+index],
+  showtime: showtime + 3.hours,
+  base_price: 120,
+  max_discount: 40,
+  min_empty_seats:50, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  hours_for_discount:3,
+)
+sesh4.save!
     end
   end
 end
