@@ -15,5 +15,21 @@
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Work Sans' !important;
+  font-size: 20px !important;
+  background-color: #e2e2e2 !important;
+  transform: translate(-50%, -100%) translate(120px,200px) !important;
+  border-radius: 12px !important;
+
+}
+
+.mapboxgl-popup.mapboxgl-popup-anchor-bottom {
+    background-color: #e2e2e2;
+    transform: translate(-50%, -100%) translate(194px, 700px) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 10px -9px black !important;
+}
+
+.mapboxgl-popup-tip {
+  display: none !important;
 }

@@ -1,7 +1,9 @@
 // Specific CSS for your home-page
 .home {
   width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
+  padding-left: 0px;
+  padding-right: 0px;
   .logo-home {
     text-align: center;
     margin-top: 20px;
@@ -17,6 +19,8 @@
     font-family: work sans;
     font-size: 18px;
     color: $lightergrey;
+    margin-bottom: 15px;
+    margin-left: 15px;
   }
 }
 
