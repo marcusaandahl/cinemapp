@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_164954) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "state"
+    t.string "state", default: "pending"
     t.integer "price_cents", default: 0, null: false
     t.string "checkout_session_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2019_11_28_164954) do
     t.bigint "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "booked"
+    t.boolean "booked", default: false
     t.index ["room_id"], name: "index_seats_on_room_id"
   end
 

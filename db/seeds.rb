@@ -285,7 +285,7 @@ sesh = Session.new(
   showtime: showtime,
   base_price: 120,
   max_discount: 40,
-  min_empty_seats:50, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  min_empty_seats:30, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
   hours_for_discount:24,
 )
 sesh.save!
@@ -295,7 +295,7 @@ sesh2 = Session.new(
   showtime: showtime,
   base_price: 120,
   max_discount: 40,
-  min_empty_seats:50, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  min_empty_seats:30, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
   hours_for_discount:3,
 )
 sesh2.save!
@@ -315,7 +315,7 @@ sesh4 = Session.new(
   showtime: showtime,
   base_price: 120,
   max_discount: 40,
-  min_empty_seats:50, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  min_empty_seats:30, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
   hours_for_discount:3,
 )
 sesh4.save!
@@ -330,7 +330,7 @@ old = Session.new(
   showtime: base_time - 24.hours,
   base_price: 120,
   max_discount: 40,
-  min_empty_seats:50, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  min_empty_seats:30, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
   hours_for_discount:3,
 )
 old.save!
@@ -342,7 +342,7 @@ old2 = Session.new(
   showtime: base_time - 48.hours,
   base_price: 120,
   max_discount: 40,
-  min_empty_seats:50, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  min_empty_seats:30, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
   hours_for_discount:3,
 )
 old2.save!
@@ -353,7 +353,7 @@ old3 = Session.new(
   showtime: base_time - 71.hours,
   base_price: 120,
   max_discount: 40,
-  min_empty_seats:50, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
+  min_empty_seats:30, #This is the minimum value (in percentage) of empty seats for which the ticket price will be the lowest accepted.
   hours_for_discount:3,
 )
 old3.save!
@@ -471,14 +471,6 @@ booking6 = Booking.new(
   )
 booking6.save!
 
-
-booking7 = Booking.new(
-  order: order2,
-  session: old,
-  seat:Seat.last,
-  )
-booking7.save!
-
 booking8 = Booking.new(
   order: order2,
   session: old2,
@@ -495,9 +487,10 @@ booking9.save!
 
 booking10 = Booking.new(
   order: order2,
-  session: old,
-  seat:Seat.last,
+  session: old3,
+  seat:Seat.first,
   )
 booking10.save!
+
 order1.update(price: order1.price_update)
 order2.update(price: order2.price_update)
