@@ -63,6 +63,14 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
+  width: 90%;
+h2 {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  // margin-left:-10px;
+  text-shadow: 1px 1px $darkergrey;
+}
 }
 
 .poster-content-text h5 {
@@ -70,12 +78,6 @@
   font-size: 14px;
 }
 
-.poster-content-text h2 {
-  color: white;
-  font-size: 28px;
-  font-weight: 600;
-  text-shadow: 1px 1px $darkergrey;
-}
 
 .poster-content-text h3 {
   color: white;
