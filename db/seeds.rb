@@ -258,7 +258,7 @@ cinemas.each do |cinema|
           row: row,
           column: column,
           room: room,
-          booked:[true, false, true].sample
+          booked:[true, false].sample
           # booked:false
           )
       end
