@@ -33,7 +33,7 @@
       <h3><%= cinema.name %></h3>
           <h4>Next sessions:</h4>
           <div class="sessions-list">
-            <% @movie.sessions.joins(:room).where(rooms: { cinema_id: cinema.id }).each do |session| %>
+            <% @movie.sessions.joins(:room).where(rooms: { cinema_id: cinema.id }).order(showtime: :asc).each do |session| %>
             <div class="movie-sessions">
             <%# @movies.where(cinema: cinema).each do |session| %>
               <%#= link_to "#{session.showtime.strftime("%I:%M%p")}", movie_session_path(@movie, session), class: "btn red-button" %>
