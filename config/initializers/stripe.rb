@@ -9,7 +9,7 @@ StripeEvent.signing_secret = Rails.configuration.stripe[:signing_secret]
 
 StripeEvent.subscribe 'checkout.session.completed' do |event|
   order = Order.find(event.data.object.display_items[0].custom.name.to_i)
-  order.update(state: "completed")
+  order.update_attribute(:state, "completed")
   order.bookings.each do |booking|
     booking.seat.update_attribute(:booked, true)
   end
